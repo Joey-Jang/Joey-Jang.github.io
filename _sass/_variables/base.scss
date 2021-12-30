@@ -23,6 +23,8 @@ $blue-bright  : #87daff;
 $blue         : #0684bd;
 $blue-deep    : #262a30;
 $orange       : #fc6423;
+$theme        : #ff9966;
+$theme-cc     : #66cc99;
 
 
 
@@ -35,15 +37,15 @@ $text-color                   : $black-light;
 
 // Global link color.
 $link-color                   : $black-light;
-$link-hover-color             : $black-deep;
+$link-hover-color             : $theme-cc;
 $link-decoration-color        : $grey-light;
-$link-decoration-hover-color  : $black-deep;
+$link-decoration-hover-color  : $theme-cc;
 
 // Global border color.
-$border-color                 : $grey-light;
+$border-color                 : #f0f0f0;
 
 // Background color for <body>
-$body-bg-color                : white;
+$body-bg-color                : #fdfdfd;
 
 // Selection
 $selection-bg                 : $blue-deep;
@@ -62,10 +64,34 @@ $selection-color              : white;
 }
 
 // Font families.
-$font-family-chinese      : "PingFang SC", "Microsoft YaHei";
+@font-face {
+  font-family: "NotoSansKR-NunitoSans";
+  src: url("/assets/fonts/Noto_Sans_KR/NotoSansKR-Regular.otf");
+  font-style: normal;
+}
+@font-face {
+  font-family: "NotoSansKR-NunitoSans";
+  src: url("/assets/fonts/Nunito_Sans/NunitoSans-Regular.ttf");
+  unicode-range: U+0020-007E;
+  font-style: normal;
+}
 
-$font-family-base         : $font-family-chinese, sans-serif;
-$font-family-base         : if(get_font_family('global'), (get_font_family('global'), $font-family-chinese, sans-serif), $font-family-base);
+@font-face {
+  font-family: "titleFont";
+  src: url("/assets/fonts/Noto_Sans_KR/NotoSansKR-Regular.otf");
+  font-style: normal;
+}
+@font-face {
+  font-family: "titleFont";
+  src: url("/assets/fonts/Raleway/Raleway-VariableFont_wght.ttf");
+  unicode-range: U+0020-007E;
+  font-style: normal;
+}
+
+$font-family-ko      : "NotoSansKR-NunitoSans";
+
+$font-family-base         : $font-family-ko, sans-serif;
+$font-family-base         : if(get_font_family('global'), (get_font_family('global'), $font-family-base), $font-family-base);
 
 $font-family-logo         : $font-family-base;
 $font-family-logo         : if(get_font_family('logo'), (get_font_family('logo'), $font-family-base), $font-family-logo);
@@ -76,10 +102,13 @@ $font-family-headings     : if(get_font_family('headings'), (get_font_family('he
 $font-family-posts        : $font-family-base;
 $font-family-posts        : if(get_font_family('posts'), (get_font_family('posts'), $font-family-base), $font-family-posts);
 
-$font-family-monospace    : consolas, Menlo, $font-family-chinese, monospace;
-$font-family-monospace    : if(get_font_family('codes'), (get_font_family('codes'), consolas, Menlo, $font-family-chinese, monospace), $font-family-monospace);
+$font-family-monospace    : consolas, Menlo, monospace;
+$font-family-monospace    : if(get_font_family('codes'), (get_font_family('codes'), consolas, Menlo, monospace), $font-family-monospace);
 
 $font-family-icons        : 'FontAwesome';
+
+$font-family-title        : 'titleFont', sans-serif;
+$font-family-subtitle     : 'titleFont', sans-serif;
 
 
 // Font Weight
@@ -192,7 +221,7 @@ $pagination-active-border       : $grey-light;
 $main-desktop                   : 960px;
 $main-desktop-large             : 1200px;
 
-$content-desktop                : 700px;
+$content-desktop                : calc(100% - 400px);
 $content-desktop-large          : 900px;
 $content-desktop-padding        : 40px;
 
@@ -219,16 +248,18 @@ $head-bg                        : transparent;
 
 // Site Meta
 $site-meta-text-align           : center;
-$brand-color                    : white;
-$brand-hover-color              : white;
-$brand-bg                       : $black-deep;
+$brand-color                    : $black-deep;
+$brand-hover-color              : $theme;
+$brand-bg                       : white;
 
 $logo-font-size                 : 20px;
 $logo-font-size                 : if(type-of(jekyll-config('font.logo.size')) == 'number', jekyll-config('font.logo.size') + px, $logo-font-size);
 
-$site-subtitle-color            : $grey-dark;
-$subtitle-font-size             : 13px;
-$subtitle-color                 : $grey-dark;
+$site-subtitle-color            : $grey-light;
+$subtitle-font-size             : 14px;
+$subtitle-color                 : $grey-light;
+$b-subtitle-color               : $theme;
+$span-subtitle-color            : #808080;
 
 // Menu
 $menu-link-border               : transparent;

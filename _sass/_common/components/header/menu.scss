@@ -1,33 +1,42 @@
-// Menu
-// --------------------------------------------------
+// 메뉴
+
 .menu {
-  margin-top: 20px;
-  padding-left: 0;
+  padding-left: 200px;
   text-align: center;
+
+  @include mobile() {
+    text-align: left;
+    padding-left: 20px;
+  }
 }
 
 .menu .menu-item {
   display: inline-block;
-  margin: 0 10px;
+  margin-right: 20px;
   list-style: none;
 
   @media screen and (max-width: 767px) {
     margin-top: 10px;
   }
 
-  a {
-    display: block;
-    font-size: 13px;
-    line-height: inherit;
-    border-bottom: 1px solid $menu-link-border;
-    transition-property: border-color;
-    @include the-transition();
-
-    @at-root %menu-a-hover { border-bottom-color: $menu-link-hover-border; }
-    &:hover { @extend %menu-a-hover; }
+  br {
+    @include mobile() { display: none; }
   }
 
-  .fa { margin-right: 5px; }
+  a {
+    display: block;
+    font-size: 16px;
+    line-height: inherit;
+    border-bottom: none;
+
+    @include mobile() { padding: 5px 10px; }
+  }
+
+  @include mobile() {
+    display: block;
+    margin: 0 10px;
+    vertical-align: top;
+  }
 }
 
 .use-motion .menu-item { opacity: 0; }

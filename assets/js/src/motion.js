@@ -207,13 +207,13 @@ $(document).ready(function () {
 
       hasElement($title) && sequence.push({
         e: $title,
-        p: {opacity: 1, top: 0},
+        p: {opacity: 1, top: 5},
         o: { duration: 200 }
       });
 
       hasElement($subtitle) && sequence.push({
         e: $subtitle,
-        p: {opacity: 1, top: 0},
+        p: {opacity: 1, top: -5},
         o: {duration: 200}
       });
 

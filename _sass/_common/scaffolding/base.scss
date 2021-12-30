@@ -1,7 +1,16 @@
+// 기본 설정
 
 ::selection {
   background: $selection-bg;
   color: $selection-color;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 body {
@@ -44,9 +53,12 @@ p { margin: 0 0 25px 0; }
 a {
   color: $link-color;
   text-decoration: none;
-  border-bottom: 1px solid $grey-dark;
+  border-bottom: 1px solid $theme-cc;
   word-wrap: break-word;
 
+
+  transition-property: color;
+  @include the-transition();
   &:hover {
     color: $link-hover-color;
     border-bottom-color: $link-decoration-hover-color;
@@ -64,7 +76,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-
 
 hr {
   margin: 40px 0;
@@ -96,4 +107,14 @@ dt { font-weight: $font-weight-bolder; }
 dd {
   margin: 0;
   padding: 0;
+}
+
+.header-inner, .container .main-inner, .footer-inner {
+  @include mobile() { width: auto; }
+}
+
+// embed tag
+embed {
+  display: block;
+  margin:  0px auto 25px auto;
 }

@@ -1,6 +1,9 @@
+// 로고, 타이틀
+
 .site-meta {
   margin: 0;
   text-align: $site-meta-text-align;
+  width: 320px;
 
   @include mobile() { text-align: center; }
 }
@@ -9,10 +12,15 @@
   position: relative;
   display: inline-block;
   padding: 0 40px;
-  color: $brand-color;
+  // color: $brand-color;
   background: $brand-bg;
   border-bottom: none;
-  &:hover { color: $brand-hover-color; }
+  &:hover { color: unset !important; }
+  habit {
+    transition-property: color;
+    @include the-transition();
+  }
+  &:hover habit { color: $theme; }
 }
 
 .logo {
@@ -28,13 +36,23 @@
   line-height: 36px;
   font-size: $logo-font-size;
   font-weight: normal;
-  font-family: $font-family-logo;
+  font-family: $font-family-title;
 }
 
 .site-subtitle {
-  margin-top: 10px;
+  margin: 0;
   font-size: $subtitle-font-size;
   color: $subtitle-color;
+  font-family: $font-family-subtitle;
+  
+  b {
+    color: $b-subtitle-color;
+  }
+  
+  span {
+    text-shadow: 1px 1px $span-subtitle-color;
+    letter-spacing: 0.8px;
+  }
 }
 
 .use-motion {
@@ -43,6 +61,6 @@
   .logo, .site-title, .site-subtitle {
     opacity: 0;
     position: relative;
-    top: -10px;
+    top: -25px;
   }
 }

@@ -7,6 +7,8 @@ title:
   categories: Categories
   tags: Tags
   about: About
+  projects: Projects
+  blog: Blog
 
 author: Author
 
@@ -20,6 +22,8 @@ menu:
   schedule: Schedule
   sitemap: Sitemap
   commonweal: Commonweal 404
+  projects: Projects
+  blog: Blog
 
 sidebar:
   overview: Overview

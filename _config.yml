@@ -4,11 +4,10 @@
 # ---------------------------------------------------------------
 
 # Site
-title: NexT
-subtitle:
+title: 목표보단 <habit>습관</habit>을
+subtitle: <i><b>System &gt;</b> <span>Goal</span></i>
 description:
-author: John Doe
-# Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
+author: 장종인
 language: en
 date_format: '%Y-%m-%d'
 
@@ -76,7 +75,7 @@ plugins:
 # ---------------------------------------------------------------
 
 # Put your favicon.ico into `assets/` directory.
-favicon: /assets/favicon.ico
+favicon: /assets/favicon.png
 
 # Set default keywords (Use a comma to separate)
 keywords: "Jekyll, NexT"
@@ -84,13 +83,13 @@ keywords: "Jekyll, NexT"
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
 # Set rss to specific value if you have burned your feed already.
-rss:
+rss: false
 
 # Specify the date when the site was setup
 #since: 2015
 
 # icon between year and author @Footer
-authoricon: heart
+authoricon:
 
 # Footer `powered-by` and `theme-info` copyright
 copyright: true
@@ -118,10 +117,12 @@ index_with_subtitle: false
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
-  #categories: /categories/
-  #about: /about/
-  archives: /archives/
-  tags: /tags/
+  categories: /categories/
+  # about: /about/
+  # archives: /archives/
+  projects: /projects/
+  blog: /blog/
+  # tags: /tags/
   #sitemap: /sitemap.xml
   #commonweal: /404.html
 
@@ -132,7 +133,7 @@ menu:
 #   Key is the name of menu item and value is the name of FontAwesome icon. Key is case-senstive.
 #   When an question mask icon presenting up means that the item has no mapping icon.
 menu_icons:
-  enable: true
+  enable: false
   #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome
   home: home
   about: user
@@ -174,7 +175,7 @@ font:
   global:
     # external: true will load this font family from host.
     external: true
-    family: Lato
+    family:
 
   # Font settings for Headlines (h1, h2, h3, h4, h5, h6)
   # Fallback to `global` font settings.

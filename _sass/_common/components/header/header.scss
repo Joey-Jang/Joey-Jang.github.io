@@ -1,9 +1,31 @@
-.header { background: $head-bg; }
+// 헤더
 
-.header-inner { position: relative; }
+.header {
+    background: $head-bg;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1050;
+}
+
+.header-inner {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    border-bottom: 1px solid $border-color;
+}
+@media (max-width: 767px) {
+    .header-inner {
+        justify-content: center;
+    }
+}
 
 
-@import "headerband";
 @import "site-meta";
 @import "site-nav";
 @import "menu";

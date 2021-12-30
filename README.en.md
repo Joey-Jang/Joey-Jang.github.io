@@ -106,11 +106,11 @@ NexT can automatically add links to your Social Media accounts:
 
 ```yml
 social:
-  GitHub: your-github-url
-  Twitter: your-twitter-url
-  Weibo: your-weibo-url
-  DouBan: your-douban-url
-  ZhiHu: your-zhihu-url
+  GitHub: https://github.com/Joey-Jang
+  # Twitter: your-twitter-url
+  # Weibo: your-weibo-url
+  # DouBan: your-douban-url
+  # ZhiHu: your-zhihu-url
 ```
 
 ### Feed link.
@@ -148,7 +148,7 @@ menu:
   archives: /archives
 
 # Favicon
-favicon: /assets/favicon.ico
+favicon: /assets/favicon.png
 
 # Avatar (put the image into next/source/images/)
 # can be any image format supported by web browsers (JPEG,PNG,GIF,SVG,..)

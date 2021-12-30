@@ -17,13 +17,13 @@
 {% endif %}
 
 
-{% if site.han %}
+<!-- {% if site.han %}
   {% assign Han_uri = site.vendors._internal | append: '/Han/dist/han.min.css?v=3.3' | relative_url %}
   {% if site.vendors.Han %}
     {% assign Han_uri = site.vendors.Han %}
   {% endif %}
   <link rel="stylesheet" media="all" href="{{ Han_uri }}">
-{% endif %}
+{% endif %} -->
 
 
 {% comment %} #238, Disable Baidu tranformation {% endcomment %}
@@ -36,19 +36,19 @@
 {% endif %}
 
 
-{% if site.yandex_site_verification %}
+<!-- {% if site.yandex_site_verification %}
   <meta name="yandex-verification" content="{{ site.yandex_site_verification }}" />
-{% endif %}
+{% endif %} -->
 
 
-{% if site.baidu_site_verification %}
+<!-- {% if site.baidu_site_verification %}
   <meta name="baidu-site-verification" content="{{ site.baidu_site_verification }}" />
-{% endif %}
+{% endif %} -->
 
 
-{% if site.qihu_site_verification %}
+<!-- {% if site.qihu_site_verification %}
   <meta name="360-site-verification" content="{{ site.qihu_site_verification }}" />
-{% endif %}
+{% endif %} -->
 
 
 {% if site.fancybox %}

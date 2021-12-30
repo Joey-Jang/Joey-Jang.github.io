@@ -7,13 +7,14 @@
 
 .footer-inner { text-align: center; }
 
-.with-love {
-  display: inline-block;
-  margin: 0 5px;
-}
-
 .powered-by,
-.theme-info { display: inline-block; }
+.theme-info {
+  display: inline-block;
+  
+  a {
+    border-bottom: none;
+  }
+}
 
 .powered-by {
   margin-right: 10px;
@@ -36,4 +37,11 @@
   }
 
   img { display: inline-block; }
+}
+
+.authoricon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: center / contain no-repeat url("/assets/authoricon-theme.png");
 }
