@@ -109,8 +109,8 @@ dd {
   padding: 0;
 }
 
-.header .header-inner, .container .main-inner, .footer .footer-inner {
-  @include mobile() { width: auto; }
+.header-inner, .main-inner, .footer-inner {
+  @include mobile() { width: auto !important; }
 }
 
 // embed tag
