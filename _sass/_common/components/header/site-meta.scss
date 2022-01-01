@@ -13,15 +13,9 @@
   display: inline-block;
   padding: 0 40px;
   width: 100%;
-  // color: $brand-color;
+  color: $brand-color;
   background: $brand-bg;
   border-bottom: none;
-  &:hover { color: unset !important; }
-  habit {
-    transition-property: color;
-    @include the-transition();
-  }
-  &:hover habit { color: $theme; }
 }
 
 .logo {
