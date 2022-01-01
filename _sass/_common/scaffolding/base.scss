@@ -109,7 +109,7 @@ dd {
   padding: 0;
 }
 
-.header-inner, .container .main-inner, .footer-inner {
+.header .header-inner, .container .main-inner, .footer .footer-inner {
   @include mobile() { width: auto; }
 }
 
