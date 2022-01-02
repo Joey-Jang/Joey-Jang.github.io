@@ -17,10 +17,6 @@ html, body { height: 100%; }
 // --------------------------------------------------
 .header-inner {
   width: 100%;
-
-  @include desktop-large() {
-    .container & { width: $content-desktop-large; }
-  }
 }
 
 // Main Section
