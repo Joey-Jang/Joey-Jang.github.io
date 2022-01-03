@@ -9,6 +9,7 @@ title:
   about: About
   project: Project
   projects: Projects
+  blog: Blog
 
 author: Author
 
@@ -24,6 +25,7 @@ menu:
   commonweal: Commonweal 404
   project: Project
   projects: Projects
+  blog: Blog
 
 sidebar:
   overview: Overview
