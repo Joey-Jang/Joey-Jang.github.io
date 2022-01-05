@@ -32,7 +32,6 @@
     background: white;
     border-top: 1px solid $border-color;
     border-bottom: 1px solid $border-color;
-    z-index: 1;
   }
   @include tablet() { display: block !important; }
   @include desktop() { display: block !important; }

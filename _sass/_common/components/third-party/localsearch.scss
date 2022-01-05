@@ -54,7 +54,7 @@
 
   .local-search-header {
     padding: 5px;
-    height: 36px;
+    height: 46px;
     background: #f5f5f5;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -69,15 +69,16 @@
 
   .local-search-input-wrapper {
     display: inline-block;
-    width: calc(100% - 90px);
+    width: calc(100% - 80px);
     height: 36px;
     line-height: 36px;
     padding: 0 5px;
+    border-right: 1px solid #eee;
   }
 
   .local-search-input-wrapper input {
     padding: 8px 0;
-    height: 20px;
+    height: 36px;
     display: block;
     width: 100%;
     outline: none;
@@ -91,7 +92,7 @@
     font-size: 18px;
     color: #999;
     height: 36px;
-    width: 18px;
+    width: 38px;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -101,7 +102,6 @@
   }
 
   .popup-btn-close {
-    border-left: 1px solid #eee;
     float: right;
     cursor: pointer;
   }
