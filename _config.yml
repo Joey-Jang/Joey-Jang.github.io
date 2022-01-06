@@ -13,22 +13,22 @@ date_format: '%Y-%m-%d'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com' and baseurl as '/child'
-url:
+url: 'https://joey-jang.github.io'
 baseurl:
 permalink: pretty
 
 # Pagination
 paginate: 10
-#paginate_path: "/page:num/"
-#archive:
-  #paginate: 10
-  #paginate_path: "/page:num/"
-#category:
-  #paginate: 10
-  #paginate_path: "/page:num/"
-#tag:
-  #paginate: 10
-  #paginate_path: "/page:num/"
+paginate_path: "/page:num/"
+archive:
+  paginate: 10
+  paginate_path: "/page:num/"
+category:
+  paginate: 10
+  paginate_path: "/page:num/"
+tag:
+  paginate: 10
+  paginate_path: "/page:num/"
 
 # Handling Reading
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "Gemfile", "Gemfile.lock", "README_en.md", "vendor"]
@@ -86,10 +86,10 @@ keywords: "Jekyll, NexT"
 rss: false
 
 # Specify the date when the site was setup
-#since: 2015
+since: 2021
 
 # icon between year and author @Footer
-authoricon:
+# authoricon:
 
 # Footer `powered-by` and `theme-info` copyright
 copyright: true
@@ -228,8 +228,8 @@ social_icons:
   # Icon Mappings.
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
   GitHub: github
-  Twitter: twitter
-  Weibo: weibo
+  # Twitter: twitter
+  # Weibo: weibo
 
 
 # Sidebar Avatar
@@ -363,7 +363,7 @@ highlight_theme: normal
 
 # MathJax Support
 mathjax:
-  enable: false
+  enable: true
   per_page: false
   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
@@ -382,7 +382,7 @@ han: false
 # Disqus
 disqus:
   enable: true
-  shortname:
+  shortname: joey-jang
   count: true
   # hide comments (visitors need to click to load the comments)
   # count need to be false when hide is true
