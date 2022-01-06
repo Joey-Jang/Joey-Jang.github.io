@@ -43,8 +43,14 @@
   b {
     color: $b-subtitle-color;
   }
+
+  .gt {
+    color: $theme-cc;
+    font-family: $font-family-base;
+    font-style: normal !important;
+  }
   
-  span {
+  span:not(.gt) {
     text-shadow: 1px 1px $span-subtitle-color;
     letter-spacing: 0.8px;
   }
