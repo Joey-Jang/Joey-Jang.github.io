@@ -29,6 +29,15 @@ category:
 tag:
   paginate: 10
   paginate_path: "/page:num/"
+blog:
+  paginate: 10
+  paginate_path: "/page:num/"
+page:
+  paginate: 10
+  paginate_path: "/page:num/"
+post:
+  paginate: 10
+  paginate_path: "/page:num/"
 
 # Handling Reading
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "Gemfile", "Gemfile.lock", "README_en.md", "vendor"]
@@ -122,7 +131,7 @@ menu:
   categories: /categories/
   about: /about/
   archives: /archives/
-  # tags: /tags/
+  tags: /tags/
   #sitemap: /sitemap.xml
   #commonweal: /404.html
 
@@ -408,7 +417,7 @@ wildfire:
     siteId:
   # other configs
   theme: light # or dark
-  locale: ko # or other locales, e.g. zh-CN
+  locale: en # or other locales, e.g. zh-CN
   defaultAvatarURL: 
 # Any question? 
 # Raise an issue here: https://github.com/cheng-kang/wildfire/issues

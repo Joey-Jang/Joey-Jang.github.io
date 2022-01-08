@@ -43,20 +43,6 @@
     <div>
       this is projects test page
     </div>
-  {% elsif page.type == 'blog' %}
-    <div>
-      this is blog test page
-    </div>
-
-    {% assign posts = site.posts %}
-    
-    <section id="posts" class="posts-expand">
-      {% for post in posts %}
-        {% assign is_index = true %}
-        {% include _macro/post.html %}
-      {% endfor %}
-    </section>
-
   {% else %}
     {{ content }}
   {% endif %}
