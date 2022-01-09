@@ -11,18 +11,25 @@
   font-size: 14px;
   color: $sidebar-nav-color;
 
-  &:hover { color: $sidebar-nav-hover-color; }
-}
-
-.page-post-detail .sidebar-nav-toc { padding: 0 5px; }
-
-.page-post-detail .sidebar-nav-overview { margin-left: 10px; }
-
-.sidebar-nav .sidebar-nav-active {
-  color: $sidebar-highlight;
-  border-bottom-color: $sidebar-highlight;
-
-  &:hover { color: $sidebar-highlight; }
+  @include the-transition();
+    &:hover {
+      color: $sidebar-nav-hover-color;
+      border-bottom: 1px solid $sidebar-nav-hover-color;
+    }
+  }
+  
+  .page-post-detail .sidebar-nav-toc { padding: 0 5px; }
+  
+  .page-post-detail .sidebar-nav-overview { margin-left: 10px; }
+  
+  .sidebar-nav .sidebar-nav-active {
+    color: $sidebar-highlight;
+    border-bottom-color: $sidebar-highlight;
+    
+    &:hover {
+      color: $sidebar-highlight;
+      border-bottom: 1px solid $sidebar-highlight;
+  }
 }
 
 .sidebar-panel { display: none; }

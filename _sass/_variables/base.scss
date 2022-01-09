@@ -248,7 +248,7 @@ $head-bg                        : transparent;
 
 // Site Meta
 $site-meta-text-align           : center;
-$brand-color                    : $black-deep;
+$brand-color                    : $black-dim;
 $brand-hover-color              : $theme;
 $brand-bg                       : white;
 
@@ -299,8 +299,8 @@ $read-more-border-radius        : 0;
 // Variables for sidebar section elements.
 // --------------------------------------------------
 $sidebar-nav-color                    : $black-light;
-$sidebar-nav-hover-color              : $whitesmoke;
-$sidebar-highlight                    : $blue-bright;
+$sidebar-nav-hover-color              : $black-dim;
+$sidebar-highlight                    : $theme-cc;
 
 $site-author-image-padding            : 2px;
 $site-author-image-width              : 96px;
@@ -341,7 +341,7 @@ $toc-link-active-current-border-color : $sidebar-highlight;
 // Back to top
 $b2t-opacity                  : 1;
 $b2t-position-bottom          : -100px;
-$b2t-position-bottom-on       : 19px;
+$b2t-position-bottom-on       : 20px;
 $b2t-position-right           : 30px;
 $b2t-font-size                : 12px;
 $b2t-color                    : white;

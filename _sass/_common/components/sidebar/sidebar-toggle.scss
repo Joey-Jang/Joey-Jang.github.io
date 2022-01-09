@@ -1,7 +1,8 @@
+// 사이드바 토글 버튼
 .sidebar-toggle {
   position: fixed;
   right: $b2t-position-right;
-  bottom: 45px;
+  bottom: 48px;
   width: 24px;
   height: 24px;
   padding: 5px;
@@ -18,8 +19,6 @@
     display: none;
   }
 }
-
-
 
 .sidebar-toggle-line {
   position: relative;
