@@ -206,7 +206,7 @@ $pagination-link-color          : $link-color;
 $pagination-link-border         : $gainsboro;
 
 $pagination-link-hover-bg       : transparent;
-$pagination-link-hover-color    : $link-color;
+$pagination-link-hover-color    : $black-deep;
 $pagination-link-hover-border   : $black-deep;
 
 $pagination-active-bg           : $grey-light;
@@ -248,7 +248,7 @@ $head-bg                        : transparent;
 
 // Site Meta
 $site-meta-text-align           : center;
-$brand-color                    : $black-dim;
+$brand-color                    : $black-deep;
 $brand-hover-color              : $theme;
 $brand-bg                       : white;
 
@@ -299,7 +299,7 @@ $read-more-border-radius        : 0;
 // Variables for sidebar section elements.
 // --------------------------------------------------
 $sidebar-nav-color                    : $black-light;
-$sidebar-nav-hover-color              : $black-dim;
+$sidebar-nav-hover-color              : $black-deep;
 $sidebar-highlight                    : $theme-cc;
 
 $site-author-image-padding            : 2px;

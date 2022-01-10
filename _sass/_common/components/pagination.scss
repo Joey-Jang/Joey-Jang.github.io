@@ -23,7 +23,10 @@
     transition-property: border-color;
     @include the-transition();
 
-    &:hover { border-top-color: $pagination-link-hover-border; }
+    &:hover {
+      color: $pagination-link-hover-color;
+      border-top-color: $pagination-link-hover-border;
+    }
   }
 
   .space {

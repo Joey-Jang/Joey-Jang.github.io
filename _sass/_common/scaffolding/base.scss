@@ -57,7 +57,7 @@ a {
   word-wrap: break-word;
 
 
-  transition-property: color;
+  // transition-property: color;
   @include the-transition();
   &:hover {
     color: $link-hover-color;
