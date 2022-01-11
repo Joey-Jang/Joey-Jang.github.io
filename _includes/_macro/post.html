@@ -10,7 +10,7 @@
     {% assign post_class = post_class | append: ' ' | append: 'post-sticky' %}
   {% endif %}
 
-  <article class="{{ post_class }}" itemscope itemtype="http://schema.org/Article">
+  <article class="{{ post_class }}" itemscope itemtype="http://schema.org/Article" {% if route %}route="{{ route }}"{% endif %}>
     <link itemprop="mainEntityOfPage" href="{{ post.url | absolute_url }}">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -293,31 +293,31 @@
         {% if post.description and site.excerpt_description %}
           {{ post.description }}
           <!--noindex-->
-          <div class="post-button text-center">
+          <!-- <div class="post-button text-center">
             <a class="btn" href="{{ post.url | relative_url }}">
               {{ __.post.read_more }} &raquo;
             </a>
-          </div>
+          </div> -->
           <!--/noindex-->
         {% elsif post.excerpt  %}
           {% include _macro/post-excerpt.html %}
           <!--noindex-->
-          <div class="post-button text-center">
+          <!-- <div class="post-button text-center">
             <a class="btn" href="{{ post.url | relative_url }}{% if site.scroll_to_more %}#{{ __.post.more }}{% endif %}" rel="contents">
               {{ __.post.read_more }} &raquo;
             </a>
-          </div>
+          </div> -->
           <!--/noindex-->
         {% elsif site.auto_excerpt.enable %}
           {% assign content = post.content | strip_html %}
           {{ content | slice: 0, site.auto_excerpt.length }}
           {% if content.size > site.auto_excerpt.length %}...{% endif %}
           <!--noindex-->
-          <div class="post-button text-center">
+          <!-- <div class="post-button text-center">
             <a class="btn" href="{{ post.url | relative_url }}{% if site.scroll_to_more %}#{{ __.post.more }}{% endif %}" rel="contents">
               {{ __.post.read_more }} &raquo;
             </a>
-          </div>
+          </div> -->
           <!--/noindex-->
         {% else %}
           {% if post.type == 'picture' %}
@@ -424,7 +424,7 @@
           {% assign isLast = true %}
         {% endif %}
         {% unless isLast %}
-          <div class="post-eof"></div>
+          <hr class="post-eof"></hr>
         {% endunless %}
       {% endif %}
     </footer>

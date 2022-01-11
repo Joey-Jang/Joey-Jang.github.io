@@ -5,7 +5,7 @@
 
 # Site
 title: 목표보단 습관을
-subtitle: <i><b>System</b><span class="gt"> &amp;gt; </span><span>Goal</span></i>
+subtitle: <i><b>System</b> &amp;gt; <span>Goal</span></i>
 description:
 author: 장종인
 language: en
@@ -128,10 +128,10 @@ menu:
   home: /
   projects: /projects/
   blog: /blog/
-  categories: /categories/
-  about: /about/
-  archives: /archives/
-  tags: /tags/
+  # categories: /categories/
+  # about: /about/
+  # archives: /archives/
+  # tags: /tags/
   #sitemap: /sitemap.xml
   #commonweal: /404.html
 
@@ -184,7 +184,7 @@ font:
   global:
     # external: true will load this font family from host.
     external: true
-    family:
+    family: Nunito
 
   # Font settings for Headlines (h1, h2, h3, h4, h5, h6)
   # Fallback to `global` font settings.
@@ -266,8 +266,8 @@ toc:
 
 sidebar:
   # Sidebar Position, available value: left | right
-  position: left
-  #position: right
+  # position: left
+  position: right
 
   # Sidebar Display, available value:
   #  - post    expand on posts automatically. Default.

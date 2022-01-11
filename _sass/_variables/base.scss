@@ -63,32 +63,7 @@ $selection-color              : white;
   @return if(type-of($custom_family) == 'string', $custom_family, null);
 }
 
-// Font families.
-@font-face {
-  font-family: "NotoSansKR-NunitoSans";
-  src: url("/assets/fonts/Noto_Sans_KR/NotoSansKR-Regular.otf");
-  font-style: normal;
-}
-@font-face {
-  font-family: "NotoSansKR-NunitoSans";
-  src: url("/assets/fonts/Nunito_Sans/NunitoSans-Regular.ttf");
-  unicode-range: U+0020-007E;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "titleFont";
-  src: url("/assets/fonts/Noto_Sans_KR/NotoSansKR-Regular.otf");
-  font-style: normal;
-}
-@font-face {
-  font-family: "titleFont";
-  src: url("/assets/fonts/Raleway/Raleway-VariableFont_wght.ttf");
-  unicode-range: U+0020-007E;
-  font-style: normal;
-}
-
-$font-family-ko      : "NotoSansKR-NunitoSans";
+$font-family-ko      : "Noto Sans KR";
 
 $font-family-base         : $font-family-ko, sans-serif;
 $font-family-base         : if(get_font_family('global'), (get_font_family('global'), $font-family-base), $font-family-base);
@@ -107,9 +82,6 @@ $font-family-monospace    : if(get_font_family('codes'), (get_font_family('codes
 
 $font-family-icons        : 'FontAwesome';
 
-$font-family-title        : 'titleFont', sans-serif;
-$font-family-subtitle     : 'titleFont', sans-serif;
-
 
 // Font Weight
 $font-weight-lighter      : 200;
@@ -120,7 +92,7 @@ $font-weight-bolder       : 700;
 
 
 // Font size
-$font-size-base           : 14px;
+$font-size-base           : 16px;
 $font-size-small          : $font-size-base - 2px;
 $font-size-smaller        : $font-size-base - 4px;
 $font-size-large          : $font-size-base + 2px;
@@ -284,7 +256,7 @@ $post-copyright : (
 
 // Posts Collpase
 // --------------------------------------------------
-$posts-collapse-left            : 55px;
+$posts-collapse-left            : 0; // 55px
 $posts-collapse-left-mobile     : 5px;
 
 $read-more-color                : white;

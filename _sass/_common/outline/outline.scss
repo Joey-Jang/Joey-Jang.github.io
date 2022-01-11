@@ -24,7 +24,7 @@ html, body { height: 100%; }
 .main { padding-bottom: $footer-height + $gap-between-main-and-footer; }
 .main-inner {
   margin: 0 auto;
-  padding-top: 60px;
+  padding-top: 80px;
   width: $content-desktop;
 
   @include desktop-large() {

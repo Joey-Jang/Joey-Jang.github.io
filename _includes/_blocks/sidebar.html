@@ -13,11 +13,14 @@
   {% capture sidebar %}{% include _macro/sidebar.html %}{% endcapture %}
 {% when 'category' %}
   {% assign is_post = false %}
-  {% capture sidebar %}{% include _macro/sidebar.html %}{% endcapture %}
+  {% capture sidebar %}{% include _macro/sidebar-category.html %}{% endcapture %}
 {% when 'tag' %}
   {% assign is_post = false %}
   {% capture sidebar %}{% include _macro/sidebar.html %}{% endcapture %}
 {% when 'schedule' %}
   {% assign is_post = false %}
   {% capture sidebar %}{% include _macro/sidebar.html %}{% endcapture %}
+{% when 'blog' %}
+  {% assign is_post = false %}
+  {% capture sidebar %}{% include _macro/sidebar-category.html %}{% endcapture %}
 {% endcase %}

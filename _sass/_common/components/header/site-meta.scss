@@ -2,16 +2,18 @@
 
 .site-meta {
   text-align: $site-meta-text-align;
-  width: 320px;
+  width: 240px;
+  padding-right: 80px;
 
-  @include mobile() { text-align: center; }
+  @include mobile() {
+    text-align: center;
+    padding: 0 40px;
+  }
 }
 
 .brand {
   position: relative;
   display: inline-block;
-  padding: 0 40px;
-  width: 100%;
   color: $brand-color;
   background: $brand-bg;
   border-bottom: none;
@@ -27,28 +29,21 @@
 .site-title {
   display: inline-block;
   // vertical-align: top;
-  width: 100%;
   line-height: 36px;
   font-size: $logo-font-size;
   font-weight: normal;
-  font-family: $font-family-title;
 }
 
 .site-subtitle {
   margin: 0;
   font-size: $subtitle-font-size;
   color: $subtitle-color;
-  font-family: $font-family-subtitle;
   
   b {
     color: $b-subtitle-color;
   }
-
-  .gt {
-    font-family: $font-family-base;
-  }
   
-  span:not(.gt) {
+  span {
     text-shadow: 1px 1px $span-subtitle-color;
     letter-spacing: 0.8px;
   }

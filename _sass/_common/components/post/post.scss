@@ -39,6 +39,8 @@
   @include transform(rotate(30deg));
 }
 
+.post-comments-count a { border-bottom: none; }
+
 @import "post-expand";
 @import "post-collapse";
 @import "post-type";
