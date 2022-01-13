@@ -58,14 +58,17 @@ $selection-color              : white;
 // --------------------------------------------------
 
 
+@import "font";
+
 @function get_font_family($config) {
   $custom_family : jekyll-config('font.' + $config + '.family');
   @return if(type-of($custom_family) == 'string', $custom_family, null);
 }
 
-$font-family-ko      : "Noto Sans KR";
+$font-family-w            : "Nunitow";
+$font-family-ko           : "NotoSansKR";
 
-$font-family-base         : $font-family-ko, sans-serif;
+$font-family-base         : $font-family-w, $font-family-ko, sans-serif;
 $font-family-base         : if(get_font_family('global'), (get_font_family('global'), $font-family-base), $font-family-base);
 
 $font-family-logo         : $font-family-base;
