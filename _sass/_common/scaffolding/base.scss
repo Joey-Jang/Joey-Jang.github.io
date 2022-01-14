@@ -110,7 +110,10 @@ dd {
 }
 
 .header-inner, .main-inner, .footer-inner {
-  @include mobile() { width: auto !important; }
+  @include mobile() {
+    width: $content-mobile !important;
+    min-width: $content-mobile-min !important;
+  }
 }
 
 // embed tag

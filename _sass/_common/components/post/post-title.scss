@@ -23,7 +23,7 @@
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: $black-deep;
+    background-color: $theme-cc;
     visibility: hidden;
     @include transform(scaleX(0));
     @include the-transition();
@@ -34,7 +34,7 @@
     @include transform(scaleX(1));
   }
 
-  &:hover { color:$black-deep; }
+  &:hover { color:$theme-cc; }
 
   .fa { font-size: 16px; }
 }

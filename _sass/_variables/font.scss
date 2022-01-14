@@ -1,140 +1,13 @@
 @font-face {
-    font-family: 'Nunitow';
-    src: url('/assets/fonts/Nunito/Nunito-ExtraLight.ttf') format('truetype');
-    font-weight: 200;
-    font-style: normal;
-    font-display: block;
-    unicode-range: U+0020-007E;
-}
-@font-face {
-    font-family: 'Nunitow';
-    src: url('/assets/fonts/Nunito/Nunito-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-    font-display: block;
-    unicode-range: U+0020-007E;
-}
-@font-face {
-    font-family: 'Nunitow';
-    src: url('/assets/fonts/Nunito/Nunito-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: block;
-    unicode-range: U+0020-007E;
-}
-@font-face {
-    font-family: 'Nunitow';
-    src: url('/assets/fonts/Nunito/Nunito-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-    font-display: block;
-    unicode-range: U+0020-007E;
-}
-@font-face {
-    font-family: 'Nunitow';
-    src: url('/assets/fonts/Nunito/Nunito-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-    font-display: block;
-    unicode-range: U+0020-007E;
-}
-@font-face {
-    font-family: 'Nunitow';
-    src: url('/assets/fonts/Nunito/Nunito-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: block;
-    unicode-range: U+0020-007E;
-}
-@font-face {
-    font-family: 'Nunitow';
-    src: url('/assets/fonts/Nunito/Nunito-ExtraBold.ttf') format('truetype');
-    font-weight: 800;
-    font-style: normal;
-    font-display: block;
-    unicode-range: U+0020-007E;
-}
-@font-face {
-    font-family: 'Nunitow';
-    src: url('/assets/fonts/Nunito/Nunito-Black.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-    font-display: block;
-    unicode-range: U+0020-007E;
-}
-
-
-
-@font-face {
-    font-family: 'Nunitow';
-    src: url('/assets/fonts/Nunito/Nunito-ExtraLightItalic.ttf') format('truetype');
-    font-weight: 200;
-    font-style: italic;
-    font-display: block;
-    unicode-range: U+0020-007E;
-}
-@font-face {
-    font-family: 'Nunitow';
-    src: url('/assets/fonts/Nunito/Nunito-LightItalic.ttf') format('truetype');
-    font-weight: 300;
-    font-style: italic;
-    font-display: block;
-    unicode-range: U+0020-007E;
-}
-@font-face {
-    font-family: 'Nunitow';
-    src: url('/assets/fonts/Nunito/Nunito-Italic.ttf') format('truetype');
-    font-weight: 400;
-    font-style: italic;
-    font-display: block;
-    unicode-range: U+0020-007E;
-}
-@font-face {
-    font-family: 'Nunitow';
-    src: url('/assets/fonts/Nunito/Nunito-MediumItalic.ttf') format('truetype');
-    font-weight: 500;
-    font-style: italic;
-    font-display: block;
-    unicode-range: U+0020-007E;
-}
-@font-face {
-    font-family: 'Nunitow';
-    src: url('/assets/fonts/Nunito/Nunito-SemiBoldItalic.ttf') format('truetype');
-    font-weight: 600;
-    font-style: italic;
-    font-display: block;
-    unicode-range: U+0020-007E;
-}
-@font-face {
-    font-family: 'Nunitow';
-    src: url('/assets/fonts/Nunito/Nunito-BoldItalic.ttf') format('truetype');
-    font-weight: 700;
-    font-style: italic;
-    font-display: block;
-    unicode-range: U+0020-007E;
-}
-@font-face {
-    font-family: 'Nunitow';
-    src: url('/assets/fonts/Nunito/Nunito-ExtraBoldItalic.ttf') format('truetype');
-    font-weight: 800;
-    font-style: italic;
-    font-display: block;
-    unicode-range: U+0020-007E;
-}
-@font-face {
-    font-family: 'Nunitow';
-    src: url('/assets/fonts/Nunito/Nunito-BlackItalic.ttf') format('truetype');
-    font-weight: 900;
-    font-style: italic;
-    font-display: block;
-    unicode-range: U+0020-007E;
+    font-family: 'Monoton-w';
+    src: url();
 }
 
 
 
 @font-face {
     font-family: 'NotoSansKR';
-    src: url('/assets/fonts/NotoSansKR/NotoSansKR-Thin.otf') format('opentype');
+    src: url('/assets/fonts/Noto_Sans_KR/NotoSansKR-Thin.otf') format('opentype');
     font-weight: 100;
     font-style: normal;
     font-display: block;
@@ -142,7 +15,7 @@
 }
 @font-face {
     font-family: 'NotoSansKR';
-    src: url('/assets/fonts/NotoSansKR/NotoSansKR-Light.otf') format('opentype');
+    src: url('/assets/fonts/Noto_Sans_KR/NotoSansKR-Light.otf') format('opentype');
     font-weight: 300;
     font-style: normal;
     font-display: block;
@@ -150,7 +23,7 @@
 }
 @font-face {
     font-family: 'NotoSansKR';
-    src: url('/assets/fonts/NotoSansKR/NotoSansKR-Regular.otf') format('opentype');
+    src: url('/assets/fonts/Noto_Sans_KR/NotoSansKR-Regular.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
     font-display: block;
@@ -158,7 +31,7 @@
 }
 @font-face {
     font-family: 'NotoSansKR';
-    src: url('/assets/fonts/NotoSansKR/NotoSansKR-Medium.otf') format('opentype');
+    src: url('/assets/fonts/Noto_Sans_KR/NotoSansKR-Medium.otf') format('opentype');
     font-weight: 500;
     font-style: normal;
     font-display: block;
@@ -166,7 +39,7 @@
 }
 @font-face {
     font-family: 'NotoSansKR';
-    src: url('/assets/fonts/NotoSansKR/NotoSansKR-Bold.otf') format('opentype');
+    src: url('/assets/fonts/Noto_Sans_KR/NotoSansKR-Bold.otf') format('opentype');
     font-weight: 700;
     font-style: normal;
     font-display: block;
@@ -174,9 +47,289 @@
 }
 @font-face {
     font-family: 'NotoSansKR';
-    src: url('/assets/fonts/NotoSansKR/NotoSansKR-Black.otf') format('opentype');
+    src: url('/assets/fonts/Noto_Sans_KR/NotoSansKR-Black.otf') format('opentype');
     font-weight: 900;
     font-style: normal;
     font-display: block;
     unicode-range: U+AC00-D7AF;
+}
+
+
+
+@font-face {
+    font-family: 'Nunito-w';
+    src: url('/assets/fonts/Nunito/static/Nunito-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'Nunito-w';
+    src: url('/assets/fonts/Nunito/static/Nunito-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'Nunito-w';
+    src: url('/assets/fonts/Nunito/static/Nunito-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'Nunito-w';
+    src: url('/assets/fonts/Nunito/static/Nunito-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'Nunito-w';
+    src: url('/assets/fonts/Nunito/static/Nunito-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'Nunito-w';
+    src: url('/assets/fonts/Nunito/static/Nunito-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'Nunito-w';
+    src: url('/assets/fonts/Nunito/static/Nunito-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'Nunito-w';
+    src: url('/assets/fonts/Nunito/static/Nunito-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+
+@font-face {
+    font-family: 'Nunito-w';
+    src: url('/assets/fonts/Nunito/static/Nunito-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'Nunito-w';
+    src: url('/assets/fonts/Nunito/static/Nunito-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'Nunito-w';
+    src: url('/assets/fonts/Nunito/static/Nunito-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'Nunito-w';
+    src: url('/assets/fonts/Nunito/static/Nunito-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'Nunito-w';
+    src: url('/assets/fonts/Nunito/static/Nunito-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'Nunito-w';
+    src: url('/assets/fonts/Nunito/static/Nunito-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'Nunito-w';
+    src: url('/assets/fonts/Nunito/static/Nunito-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'Nunito-w';
+    src: url('/assets/fonts/Nunito/static/Nunito-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+
+
+
+@font-face {
+    font-family: 'WorkSans-w';
+    src: url('/assets/fonts/Work_Sans/static/WorkSans-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'WorkSans-w';
+    src: url('/assets/fonts/Work_Sans/static/WorkSans-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'WorkSans-w';
+    src: url('/assets/fonts/Work_Sans/static/WorkSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'WorkSans-w';
+    src: url('/assets/fonts/Work_Sans/static/WorkSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'WorkSans-w';
+    src: url('/assets/fonts/Work_Sans/static/WorkSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'WorkSans-w';
+    src: url('/assets/fonts/Work_Sans/static/WorkSans-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'WorkSans-w';
+    src: url('/assets/fonts/Work_Sans/static/WorkSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'WorkSans-w';
+    src: url('/assets/fonts/Work_Sans/static/WorkSans-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'WorkSans-w';
+    src: url('/assets/fonts/Work_Sans/static/WorkSans-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+
+@font-face {
+    font-family: 'WorkSans-w';
+    src: url('/assets/fonts/Work_Sans/static/WorkSans-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'WorkSans-w';
+    src: url('/assets/fonts/Work_Sans/static/WorkSans-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'WorkSans-w';
+    src: url('/assets/fonts/Work_Sans/static/WorkSans-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'WorkSans-w';
+    src: url('/assets/fonts/Work_Sans/static/WorkSans-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'WorkSans-w';
+    src: url('/assets/fonts/Work_Sans/static/WorkSans-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'WorkSans-w';
+    src: url('/assets/fonts/Work_Sans/static/WorkSans-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'WorkSans-w';
+    src: url('/assets/fonts/Work_Sans/static/WorkSans-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'WorkSans-w';
+    src: url('/assets/fonts/Work_Sans/static/WorkSans-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: block;
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'WorkSans-w';
+    src: url('/assets/fonts/Work_Sans/static/WorkSans-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: block;
+    unicode-range: U+0020-007E;
 }

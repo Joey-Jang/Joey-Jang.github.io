@@ -5,7 +5,7 @@
 
 # Site
 title: 목표보단 습관을
-subtitle: <i><b>System</b> &amp;gt; <span>Goal</span></i>
+subtitle: <b>System</b> &amp;gt; <span>Goal</span>
 description:
 author: 장종인
 language: en
@@ -243,7 +243,7 @@ social_icons:
 
 # Sidebar Avatar
 # in directory: /assets/images/avatar.gif
-#avatar:
+avatar: assets/images/profile-webjpg-high-1680.jpg
 
 
 # Table Of Contents in the Sidebar

@@ -28,8 +28,6 @@
 
 .site-title {
   display: inline-block;
-  // vertical-align: top;
-  line-height: 36px;
   font-size: $logo-font-size;
   font-weight: normal;
 }
@@ -55,6 +53,6 @@
   .logo, .site-title, .site-subtitle {
     opacity: 0;
     position: relative;
-    top: -25px;
+    top: -30px;
   }
 }

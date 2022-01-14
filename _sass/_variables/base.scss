@@ -33,7 +33,7 @@ $theme-cc     : #66cc99;
 // --------------------------------------------------
 
 // Global text color on <body>
-$text-color                   : $black-light;
+$text-color                   : $black-deep;
 
 // Global link color.
 $link-color                   : $black-light;
@@ -65,7 +65,7 @@ $selection-color              : white;
   @return if(type-of($custom_family) == 'string', $custom_family, null);
 }
 
-$font-family-w            : "Nunitow";
+$font-family-w            : "WorkSans-w";
 $font-family-ko           : "NotoSansKR";
 
 $font-family-base         : $font-family-w, $font-family-ko, sans-serif;
@@ -196,9 +196,13 @@ $pagination-active-border       : $grey-light;
 $main-desktop                   : 100%; // 960px;
 $main-desktop-large             : 100%; // 1200px;
 
-$content-desktop                : calc(100% - 400px);
-$content-desktop-large          : calc(100% - 400px); // 900px;
+$content-desktop                : calc(100% - 640px);
+$content-desktop-min            : 600px;
+$content-desktop-max            : 920px;
+// $content-desktop-large          : 900px;
 $content-desktop-padding        : 40px;
+$content-mobile                 : auto;
+$content-mobile-min             : 380px;
 
 $sidebar-desktop                : 240px;
 
@@ -231,7 +235,7 @@ $logo-font-size                 : 20px;
 $logo-font-size                 : if(type-of(jekyll-config('font.logo.size')) == 'number', jekyll-config('font.logo.size') + px, $logo-font-size);
 
 $site-subtitle-color            : $grey-light;
-$subtitle-font-size             : 14px;
+$subtitle-font-size             : 16px;
 $subtitle-color                 : $grey-light;
 $b-subtitle-color               : $theme;
 $span-subtitle-color            : #808080;

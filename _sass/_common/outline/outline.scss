@@ -26,10 +26,12 @@ html, body { height: 100%; }
   margin: 0 auto;
   padding-top: 80px;
   width: $content-desktop;
+  min-width: $content-desktop-min;
+  max-width: $content-desktop-max;
 
-  @include desktop-large() {
-    .container & { width: $content-desktop-large; }
-  }
+  // @include desktop-large() {
+  //   .container & { width: $content-desktop-large; }
+  // }
 }
 
 
@@ -46,8 +48,10 @@ html, body { height: 100%; }
   box-sizing: border-box;
   margin: 20px auto;
   width: $content-desktop;
+  min-width: $content-desktop-min;
+  max-width: $content-desktop-max;
 
-  @include desktop-large() {
-    .container & { width: $content-desktop-large; }
-  }
+  // @include desktop-large() {
+  //   .container & { width: $content-desktop-large; }
+  // }
 }

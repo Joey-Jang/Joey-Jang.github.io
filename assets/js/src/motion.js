@@ -213,7 +213,7 @@ $(document).ready(function () {
 
       hasElement($subtitle) && sequence.push({
         e: $subtitle,
-        p: {opacity: 1, top: -5},
+        p: {opacity: 1, top: -10},
         o: {duration: 200}
       });
 
