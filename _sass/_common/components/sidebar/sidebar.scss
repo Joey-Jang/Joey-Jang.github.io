@@ -14,7 +14,7 @@
     color: $grey-dark;
     border-bottom-color: $black-light;
 
-    &:hover { color: $gainsboro; }
+    &:hover { color: $black-deep; }
   }
 
   @include tablet() {

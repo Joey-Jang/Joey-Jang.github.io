@@ -6,8 +6,8 @@
   padding-right: 80px;
 
   @include mobile() {
-    text-align: center;
-    padding: 0 40px;
+    width: 100%;
+    padding: 0;
   }
 }
 
