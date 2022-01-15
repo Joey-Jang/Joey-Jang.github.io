@@ -2,7 +2,7 @@
   font-family: $font-family-posts;
   @include mobile() {
     // word-break: break-word;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
 

@@ -54,7 +54,7 @@ a {
   color: $link-color;
   text-decoration: none;
   border-bottom: 1px solid $theme-cc;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
 
 
   // transition-property: color;
