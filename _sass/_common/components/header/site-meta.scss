@@ -26,6 +26,7 @@
 .brand {
   position: relative;
   display: inline-block;
+  width: 100%;
   color: $brand-color;
   background: $brand-bg;
   border-bottom: none;
@@ -40,6 +41,7 @@
 
 .site-title {
   display: inline-block;
+  width: 100%;
   font-size: $logo-font-size;
   font-weight: normal;
 }
