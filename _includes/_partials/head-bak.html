@@ -35,6 +35,8 @@
   <link href="{{ fancybox_css_uri }}" rel="stylesheet" type="text/css" />
 {% endif %}
 
+<!-- {% include _partials/head/external-fonts.html %} -->
+
 {% assign font_awesome_uri = site.vendors._internal | append: '/font-awesome/css/font-awesome.min.css?v=4.6.2' | relative_url %}
 {% if site.vendors.fontawesome %}
   {% assign font_awesome_uri = site.vendors.fontawesome %}
@@ -101,3 +103,5 @@
 {% if site.canonical %}
   <link rel="canonical" href="{{ page.canonical_path | replace: 'index.html', '' | absolute_url }}"/>
 {% endif %}
+
+<!-- {% include _partials/head/custom-head.html %} -->
