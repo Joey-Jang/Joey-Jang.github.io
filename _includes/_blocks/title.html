@@ -16,8 +16,6 @@
       {{ page.title | append: page_title_suffix }}
     {% endif %}
   {% endcapture %}
-<!-- {% when 'archive' %}
-  {% capture title %}{{ __.title.archives }} | {{ site.title }}{% endcapture %} -->
 {% when 'category' %}
   {% capture title %}{{ __.title.category }} | {{ site.title }}{% endcapture %}
 {% when 'tag' %}

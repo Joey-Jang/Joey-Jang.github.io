@@ -8,9 +8,6 @@
 {% when 'page' %}
   {% assign is_post = false %}
   {% capture sidebar %}{% include _macro/sidebar.html %}{% endcapture %}
-<!-- {% when 'archive' %}
-  {% assign is_post = false %}
-  {% capture sidebar %}{% include _macro/sidebar.html %}{% endcapture %} -->
 {% when 'category' %}
   {% assign is_post = false %}
   {% capture sidebar %}{% include _macro/sidebar-category.html %}{% endcapture %}
