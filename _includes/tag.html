@@ -1,11 +1,14 @@
-<div id="posts" class="posts-collapse" hidden>
+<section id="posts" class="posts-collapse" hidden>
   <div class="collection-title">
     <{% if site.seo %}h2{% else %}h1{% endif %}>
     {{ page.tag }}
     <small>{{  __.title.tag  }}</small>
     </{% if site.seo %}h2{% else %}h1{% endif %}>
+    <hr>
   </div>
+</section>
 
+<section id="posts" class="posts-expand">
   {% assign paginate = site.tag.paginate | default: site.paginate  %}
   {% assign paginate_path = site.tag.paginate_path | default: site.paginate_path  %}
 
@@ -22,9 +25,10 @@
         {% endif %}
       {% endif %}
 
-      {% include _macro/post-collapse.html %}
+      {% assign is_index = true %}
+      {% include _macro/post.html %}
     {% endfor %}
   {% endfor %}
-</div>
+</section>
 
 <nav class="pagination"></nav>
