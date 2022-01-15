@@ -1,5 +1,17 @@
 // 로고, 타이틀
 
+.site-brand-wrapper {
+  flex-grow: 1;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+
+  @include mobile() {
+    justify-content: center;
+  }
+}
+
 .site-meta {
   text-align: $site-meta-text-align;
   width: 240px;
