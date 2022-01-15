@@ -1,12 +1,24 @@
 // 로고, 타이틀
 
+.site-brand-wrapper {
+  flex-grow: 1;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+
+  @include mobile() {
+    justify-content: center;
+  }
+}
+
 .site-meta {
   text-align: $site-meta-text-align;
   width: 240px;
   padding-right: 80px;
-  overflow-wrap: break-word;
 
   @include mobile() {
+    width: 100%;
     padding: 0;
   }
 }
@@ -14,6 +26,7 @@
 .brand {
   position: relative;
   display: inline-block;
+  width: 100%;
   color: $brand-color;
   background: $brand-bg;
   border-bottom: none;
