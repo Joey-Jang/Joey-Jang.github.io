@@ -115,17 +115,7 @@
           {% endif %}
 
           {% if post.comments %}
-            {% if site.duoshuo_shortname or site.duoshuo and site.duoshuo.shortname %}
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="{{ post.url | relative_url }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="{{ post.url }}" itemprop="commentCount"></span>
-                </a>
-              </span>
-            {% elsif site.facebook_comments_plugin.enable %}
+            {% if site.facebook_comments_plugin.enable %}
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
@@ -146,75 +136,7 @@
                         data-disqus-identifier="{{ post.url }}" itemprop="commentCount"></span>
                 </a>
               </span>
-            {% elsif site.wildfire.enable %}
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="{{ post.url | relative_url }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count wf-count-unit" wf-page-url="{{ post.url | absolute_url }}" itemprop="commentCount"></span>
-                </a>
-              </span>
-            {% elsif site.hypercomments_id %}
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="{{ post.url | relative_url }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="{{ post.url }}" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            {% elsif post.layout == 'post' and site.gentie_productKey %}
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a class="cloud-tie-join-count" href="{{ post.url | relative_url }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
-                </a>
-              </span>
-            {% elsif site.changyan.enable and site.changyan.appid and site.changyan.appkey %}
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              {% if post.layout == 'post' %}
-                <a href="{{ post.url | relative_url }}#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="{{ post.url }}" itemprop="commentsCount"></span>
-                </a>
-              {% else %}
-                <a href="{{ post.url | relative_url }}#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::{{ post.url | absolute_url }}" class="cy_cmt_count" data-xid="{{ post.url }}" itemprop="commentsCount" ></span>
-                </a>
-              {% endif %}
             {% endif %}
-          {% endif %}
-
-          {% comment %} LeanCould PageView {% endcomment %}
-          {% if site.leancloud_visitors.enable %}
-             <span id="{{ post.url | relative_url }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               {% if site.post_meta.item_text %}
-                 <span class="post-meta-item-text">{{__.post.visitors}} </span>
-               {% endif %}
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          {% endif %}
-
-          {% if site.busuanzi_count.enable and site.busuanzi_count.page_pv and is_index == false or is_index == nil%}
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv">{{ site.busuanzi_count.page_pv_header }}
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>{{ site.busuanzi_count.page_pv_footer }}
-            </span>
           {% endif %}
 
           {% if site.post_wordcount.wordcount or site.post_wordcount.min2read %}
@@ -266,7 +188,7 @@
       </header>
     {% endunless %}
 
-    <div class="post-body{% if site.han %} han-init-context{% endif %}" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody">
 
       {% comment %} Gallery support {% endcomment %}
       {% if post.photos and post.photos.size > 0 %}
@@ -333,18 +255,6 @@
 
     <div>
       {% unless is_index %}
-        {% include _macro/wechat-subscriber.html %}
-      {% endunless %}
-    </div>
-
-    <div>
-      {% unless is_index %}
-        {% include _macro/reward.html %}
-      {% endunless %}
-    </div>
-
-    <div>
-      {% unless is_index %}
         {% include _macro/post-copyright.html %}
       {% endunless %}
     </div>
@@ -360,36 +270,8 @@
       {% endif %}
 
       {% unless is_index %}
-      {% if site.vkontakte_api.enable and site.vkontakte_api.like %}
-        {% assign vkontakte_api = true %}
-      {% endif %}
       {% if site.facebook_sdk.enable and site.facebook_sdk.like_button %}
         {% assign facebook_sdk = true %}
-      {% endif %}
-      {% if site.rating.enable or vkontakte_api or facebook_sdk %}
-        <div class="post-widgets">
-        {% if site.rating.enable %}
-          <div class="wp_rating">
-            <div id="wpac-rating"></div>
-          </div>
-        {% endif %}
-
-        {% if vkontakte_api or facebook_sdk %}
-          <div class="social-like">
-            {% if vkontakte_api %}
-              <div class="vk_like">
-                <span id="vk_like"></span>
-              </div>
-            {% endif %}
-
-            {% if facebook_sdk %}
-              <div class="fb_like">
-                <div class="fb-like" data-layout="button_count" data-share="true"></div>
-              </div>
-            {% endif %}
-          </div>
-        {% endif %}
-        </div>
       {% endif %}
       {% endunless %}
 

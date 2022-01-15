@@ -52,11 +52,6 @@
 @import "post-eof";
 @import "post-gallery";
 
-@import "post-reward";
-@if  jekyll-config('alipay') or jekyll-config('wechatpay') {
-  @include post-reward;
-}
-
 @import "post-copyright";
 @if jekyll-config('post_copyright.enable') {
   @include post-copyright;
@@ -68,6 +63,6 @@
 }
 
 @import "post-widgets";
-@if (jekyll-config('facebook_sdk.enable') and jekyll-config('facebook_sdk.like_button')) or (jekyll-config('vkontakte_api.enable') and jekyll-config('vkontakte_api.like')) or jekyll-config('rating.enable') {
+@if (jekyll-config('facebook_sdk.enable') and jekyll-config('facebook_sdk.like_button')) or jekyll-config('rating.enable') {
   @include post-widgets;
 }

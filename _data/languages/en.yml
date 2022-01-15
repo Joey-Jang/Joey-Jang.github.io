@@ -1,9 +1,7 @@
 title:
-  archive: Archive
   category: Category
   tag: Tag
   schedule: Schedule
-  archives: Archives
   categories: Categories
   tags: Tags
   about: About
@@ -15,14 +13,12 @@ author: Author
 
 menu:
   home: Home
-  archives: Archives
   categories: Categories
   tags: Tags
   about: About
   search: Search
   schedule: Schedule
   sitemap: Sitemap
-  commonweal: Commonweal 404
   project: Project
   projects: Projects
   blog: Blog
