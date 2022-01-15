@@ -4,6 +4,7 @@
   text-align: $site-meta-text-align;
   width: 240px;
   padding-right: 80px;
+  overflow-wrap: break-word;
 
   @include mobile() {
     padding: 0;
