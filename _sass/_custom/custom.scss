@@ -1,18 +1,93 @@
 // Custom styles.
 
-.home-container{
+.home-wrap{
     display: flex;
     flex-flow: column nowrap;
+    color: $black-deep;
+    
+    .container {
+        margin-bottom: 20px;
+        
+        .title {
+            margin-bottom: 5px;
+            font-size: 18px;
+            font-weight: 500;
+            color: $theme;
+        }
 
-    .title {
+        ul {
+            width: 100%;
+            margin: 10px 0;
+            padding-left: 0;
+
+            li {
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: flex-start;
+                align-content: flex-start;
+                align-items: flex-start;
+                width: 100%;
+                height: 80px;
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid $gainsboro;
+    
+                @include mobile { height: auto; }
+
+                span { display: inline-block; }
+
+                .list {
+                    width: 250px;
+                    height: 30px;
+                    font-size: 17px;
+                    order: 1;
+                }
+                
+                .period {
+                    height: 20px;
+                    font-size: 13px;
+                    color: $grey-dark;
+                    order: 2;
+    
+                    @include mobile() { order: 3 }
+                }
+                
+                .content {
+                    flex-grow: 1;
+
+                    max-width: 350px;
+                    font-size: 15px;
+                    font-weight: 300;
+                    line-height: 1.8;
+                    order: 3;
+    
+                    @include mobile() {
+                        order: 2
+                    }
+                }
+            }
+
+            li::marker { color: $theme-cc; }
+        }
+    }
+    
+    .hello {
         margin-bottom: 25px;
-        font-size: 36px;
-        font-weight: 900;
         font-style: italic;
         line-height: 1;
-    }
+        
+        .kor {
+            font-size: 30px;
+            font-weight: 400;
+        }
 
-    .intro-container {
+        .eng {
+            font-size: 28px;
+            font-weight: 700;
+        }
+    }
+    
+    .intro {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
@@ -37,4 +112,18 @@
         }
     }
 
+    .tech-stack {
+        padding-bottom: 10px;
+
+        .tech {
+            display: inline-block;
+            margin: 9px 5px 9px 0;
+            padding: 2px 10px;
+            background-color: $gainsboro;
+            border-bottom: none;
+            border-radius: 15px;
+            font-size: 14px;
+            color: $theme-cc;
+        }
+    }
 }
