@@ -1,12 +1,14 @@
 // 메뉴
 
 .menu {
-  padding-left: 80px;
+  margin: 0;
+  padding: 20px 0 20px 80px;
   text-align: center;
 
   @include mobile() {
     text-align: left;
     padding-left: 20px;
+    box-shadow: 0 4px 6px 0 $grey-light;
   }
 }
 

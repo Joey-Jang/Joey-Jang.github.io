@@ -43,21 +43,11 @@
         <nav class="site-state motion-element">
 
           {% if site.posts.size > 0 %}
-            <!-- <div class="site-state-item site-state-posts">
+            <div class="site-state-item site-state-posts">
               <a href="{{ site.menu.blog | relative_url }}">
                 <span class="site-state-item-count">{{ site.posts.size }}</span>
                 <span class="site-state-item-name">{{ __.state.posts }}</span>
               </a>
-            </div> -->
-            {% assign postsPageQuery = site.pages | where_exp: 'page', 'page.type == "blog"' %}
-            {% if postsPageQuery.size > 0 %}
-              {% assign hasPostsPage = true %}
-            {% endif %}
-            <div class="site-state-item site-state-posts">
-              {% if hasPostsPage %}<a href="{{ postsPageQuery[0].url | relative_url) }}">{% endif %}
-                <span class="site-state-item-count">{{ site.posts.size }}</span>
-                <span class="site-state-item-name">{{ __.state.posts }}</span>
-              {% if hasPostsPage %}</a>{% endif %}
             </div>
           {% endif %}
 

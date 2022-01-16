@@ -5,24 +5,35 @@
     flex-flow: column nowrap;
 
     .title {
+        margin-bottom: 25px;
         font-size: 36px;
         font-weight: 900;
         font-style: italic;
         line-height: 1;
-        z-index: 2;
     }
 
     .intro-container {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
-        z-index: 1;
+        font-weight: 300;
+        line-height: 1.8;
 
         .profile {
-            width: 280px;
-            height: 280px;
+            min-width: 280px;
+            max-width: 280px;
+            min-height: 280px;
+            max-height: 280px;
+            margin-left: 25px;
             background: center / cover no-repeat url("/assets/images/profile-webjpg-high-1680.jpg");
             border-radius: 50%;
+            
+            @include mobile() {
+                min-width: 140px;
+                max-width: 140px;
+                min-height: 140px;
+                max-height: 140px;
+            }
         }
     }
 

@@ -1,9 +1,8 @@
 .post-body {
+  margin-bottom: 25px;
   font-family: $font-family-posts;
-  @include mobile() {
-    // word-break: break-word;
-    overflow-wrap: break-word;
-  }
+  font-weight: 300;
+  line-height: 1.8;
 }
 
 .post-body .fancybox img {
