@@ -1,0 +1,145 @@
+.home-wrap{
+    display: flex;
+    flex-flow: column nowrap;
+    color: $black-deep;
+    
+    .container {
+        margin-bottom: 20px;
+        
+        .title {
+            margin-bottom: 5px;
+            font-size: 18px;
+            font-weight: 500;
+            color: $theme;
+        }
+
+        ul {
+            width: 100%;
+            margin: 10px 0;
+            padding-left: 0;
+
+            li {
+                display: flex;
+                flex-flow: column wrap;
+                place-content: flex-start;
+                align-items: flex-start;
+                width: 100%;
+                height: 80px;
+                margin-bottom: 20px;
+                padding: 0 10px 20px 10px;
+                border-bottom: 1px solid $gainsboro;
+    
+                @include mobile { height: auto; }
+
+                span { display: inline-block; }
+
+                .subject {
+                    width: 250px;
+                    height: 30px;
+                    font-size: 17px;
+                    order: 1;
+                }
+                
+                .period {
+                    height: 20px;
+                    font-size: 13px;
+                    color: $grey-dark;
+                    order: 2;
+    
+                    @include mobile() { order: 3 }
+                }
+                
+                .content {
+                    flex-grow: 1;
+
+                    max-width: 330px;
+                    padding-top: 5px;
+                    font-size: 15px;
+                    font-weight: 300;
+                    line-height: 1.8;
+                    order: 3;
+    
+                    @include mobile() {
+                        order: 2
+                    }
+                }
+            }
+
+            li::marker { color: $theme-cc; }
+        }
+    }
+    
+    .hello {
+        margin-bottom: 25px;
+        font-style: italic;
+        line-height: 1;
+        
+        .kor {
+            font-size: 30px;
+            font-weight: 400;
+        }
+
+        .eng {
+            padding-left: 10px;
+            font-size: 28px;
+            font-weight: 700;
+        }
+    }
+    
+    .intro {
+        padding: 0 10px;
+        font-weight: 300;
+        line-height: 1.8;
+        clear: both;
+
+        span {
+            display: block;
+            text-indent: 10px;
+        }
+
+        .profile {
+            float: right;
+            min-width: 320px;
+            max-width: 320px;
+            min-height: 240px;
+            max-height: 240px;
+            margin: 10px 0 0 25px;
+            background: center / cover no-repeat url("/assets/images/profile-webjpeg-high.jpg");
+            border-radius: 50%;
+            transform: rotate(-10deg);
+            
+            @include mobile() {
+                min-width: 160px;
+                max-width: 160px;
+                min-height: 120px;
+                max-height: 120px;
+            }
+        }
+    }
+
+    .techs {
+        padding: 0 10px 0 10px;
+
+        .tech {
+            position: relative;
+            display: inline-block;
+            margin: 9px 5px 9px 0;
+            padding: 2px 10px;
+            font-size: 14px;
+            color: $theme-cc;
+        }
+
+        .tech::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $gainsboro;
+            border-radius: 50%;
+            transform: rotate(-10deg);
+            z-index: -1;
+        }
+    }
+}

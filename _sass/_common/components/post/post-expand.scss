@@ -2,6 +2,10 @@
 
 .posts-expand {
   padding-top: 60px;
+
+  .post-body {
+    padding: 0 10px;
+  }
 }
 
 @media (max-width: 767px) {

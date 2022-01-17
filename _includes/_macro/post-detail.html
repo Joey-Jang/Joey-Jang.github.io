@@ -59,9 +59,9 @@
         <div class="post-meta">
           <span class="post-time">
             {% if site.post_meta.created_at %}
-              <span class="post-meta-item-icon">
+              <!-- <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
-              </span>
+              </span> -->
               {% if site.post_meta.item_text %}
                 <span class="post-meta-item-text">{{ __.post.posted }}</span>
               {% endif %}
@@ -75,9 +75,9 @@
             {% endif %}
 
             {% if site.post_meta.updated_at %}
-              <span class="post-meta-item-icon">
+              <!-- <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-check-o"></i>
-              </span>
+              </span> -->
               {% if site.post_meta.item_text %}
                 <span class="post-meta-item-text">{{ __.post.modified }}</span>
               {% endif %}
@@ -92,9 +92,9 @@
             {% if site.post_meta.created_at or site.post_meta.updated_at %}
               <span class="post-meta-divider">|</span>
             {% endif %}
-              <span class="post-meta-item-icon">
+              <!-- <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
-              </span>
+              </span> -->
               {% if site.post_meta.item_text %}
                 <span class="post-meta-item-text">{{ __.post.in }}</span>
               {% endif %}
@@ -118,9 +118,9 @@
             {% if site.facebook_comments_plugin.enable %}
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
+                <!-- <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
-                </span>
+                </span> -->
                 <a href="{{ post.url | relative_url }}#comments" itemprop="discussionUrl">
                   <span class="post-comments-count fb-comments-count" data-href="{{ post.url | absolute_url }}" itemprop="commentCount">0</span> comments
                 </a>
@@ -128,9 +128,9 @@
             {% elsif site.disqus.enable and site.disqus.count %}
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
+                <!-- <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
-                </span>
+                </span> -->
                 <a href="{{ post.url | relative_url }}#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
                         data-disqus-identifier="{{ post.url }}" itemprop="commentCount"></span>
