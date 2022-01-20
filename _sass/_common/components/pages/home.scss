@@ -24,11 +24,19 @@
                 place-content: flex-start;
                 align-items: flex-start;
                 width: 100%;
-                height: 80px;
-                margin-bottom: 20px;
-                padding: 0 10px 20px 10px;
+                height: 70px;
+                margin-bottom: 15px;
+                padding: 0 10px 15px 10px;
                 border-bottom: 1px solid $gainsboro;
-    
+                
+                &::marker { color: $theme-cc; }
+
+                &:last-child {
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                    border-bottom: none;
+                }
+
                 @include mobile { height: auto; }
 
                 span { display: inline-block; }
@@ -43,15 +51,13 @@
                 .period {
                     height: 20px;
                     font-size: 13px;
-                    color: $grey-dark;
+                    color: $gray-dark;
                     order: 2;
     
-                    @include mobile() { order: 3 }
+                    @include mobile() { order: 3; }
                 }
                 
                 .content {
-                    flex-grow: 1;
-
                     max-width: 330px;
                     padding-top: 5px;
                     font-size: 15px;
@@ -59,13 +65,9 @@
                     line-height: 1.8;
                     order: 3;
     
-                    @include mobile() {
-                        order: 2
-                    }
+                    @include mobile() { order: 2; }
                 }
             }
-
-            li::marker { color: $theme-cc; }
         }
     }
     
@@ -80,20 +82,21 @@
         }
 
         .eng {
-            padding-left: 10px;
             font-size: 28px;
-            font-weight: 700;
+            font-weight: 600;
         }
     }
     
     .intro {
-        padding: 0 10px;
+        padding: 0 10px 5px 10px;
         font-weight: 300;
         line-height: 1.8;
+        text-align: justify;
         clear: both;
 
         span {
             display: block;
+            margin-bottom: 20px;
             text-indent: 10px;
         }
 
@@ -117,7 +120,27 @@
         }
     }
 
+    .contact {
+        ul {
+            padding-bottom: 10px;
+            
+            li {
+                height: 30px;
+                margin-bottom: 20px;
+                padding-bottom: 0;
+                border-bottom: none;
+
+                @include mobile() { height: auto; }
+
+                .content { height: 30px; }
+
+                a { border-bottom: none; }
+            }
+        }
+    }
+
     .techs {
+        margin-bottom: 20px;
         padding: 0 10px 0 10px;
 
         .tech {
@@ -127,19 +150,19 @@
             padding: 2px 10px;
             font-size: 14px;
             color: $theme-cc;
-        }
 
-        .tech::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: $gainsboro;
-            border-radius: 50%;
-            transform: rotate(-10deg);
-            z-index: -1;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $gainsboro;
+                border-radius: 50%;
+                transform: rotate(-10deg);
+                z-index: -1;
+            }
         }
     }
 }

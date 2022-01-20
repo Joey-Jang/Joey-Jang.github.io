@@ -6,12 +6,12 @@
 
   width: 0;
   z-index: $zindex-4;
-  box-shadow: inset 4px 4px 6px 0 $grey-light;
+  box-shadow: inset 4px 4px 6px 0 $gray-light;
   background: $body-bg-color;
   -webkit-transform: translateZ(0); // http://stackoverflow.com/questions/17079857/position-fixed-broken-in-chrome-with-flash-behind
 
   a {
-    color: $grey-dark;
+    color: $gray-dark;
     border-bottom-color: $black-light;
 
     &:hover { color: $black-deep; }
@@ -39,7 +39,7 @@
 .sidebar-inner {
   position: relative;
   padding: 100px 10px 20px 10px;
-  color: $grey-dark;
+  color: $gray-dark;
   text-align: center;
 }
 

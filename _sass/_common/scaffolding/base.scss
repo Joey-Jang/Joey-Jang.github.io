@@ -94,7 +94,7 @@ hr {
 
 blockquote {
   padding: 0 15px;
-  color: $grey-dim;
+  color: $gray-dim;
   border-left: 4px solid $gray-lighter;
 
   cite::before {
@@ -125,4 +125,11 @@ embed {
 
 ol, ul {
   list-style-type: none;
+}
+
+.lowast {
+  font-size: 20px;
+  color: $lowast;
+  text-shadow: .7px .6px $lowast-shadow;
+  transform: rotate(-15deg);
 }

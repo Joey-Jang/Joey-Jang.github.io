@@ -11,10 +11,10 @@
 $whitesmoke   : #f5f5f5;
 $gainsboro    : #eee;
 $gray-lighter : #ddd;
-$grey-light   : #ccc;
-$grey         : #bbb;
-$grey-dark    : #999;
-$grey-dim     : #666;
+$gray-light   : #ccc;
+$gray         : #bbb;
+$gray-dark    : #999;
+$gray-dim     : #666;
 $black-light  : #555;
 $black-dim    : #333;
 $black-deep   : #222;
@@ -25,6 +25,8 @@ $blue-deep    : #262a30;
 $orange       : #fc6423;
 $theme        : #ff9966;
 $theme-cc     : #66cc99;
+$lowast       : $gray-light;
+$lowast-shadow   : #808080;
 
 
 
@@ -38,7 +40,7 @@ $text-color                   : $black-deep;
 // Global link color.
 $link-color                   : $black-light;
 $link-hover-color             : $theme-cc;
-$link-decoration-color        : $grey-light;
+$link-decoration-color        : $gray-light;
 $link-decoration-hover-color  : $theme-cc;
 
 // Global border color.
@@ -184,9 +186,9 @@ $pagination-link-hover-bg       : transparent;
 $pagination-link-hover-color    : $black-deep;
 $pagination-link-hover-border   : $black-deep;
 
-$pagination-active-bg           : $grey-light;
+$pagination-active-bg           : $gray-light;
 $pagination-active-color        : white;
-$pagination-active-border       : $grey-light;
+$pagination-active-border       : $gray-light;
 
 
 
@@ -234,11 +236,10 @@ $brand-bg                       : white;
 $logo-font-size                 : 20px;
 $logo-font-size                 : if(type-of(jekyll-config('font.logo.size')) == 'number', jekyll-config('font.logo.size') + px, $logo-font-size);
 
-$site-subtitle-color            : $grey-light;
 $subtitle-font-size             : 16px;
-$subtitle-color                 : $grey-light;
+$subtitle-color                 : $lowast;
 $b-subtitle-color               : $theme;
-$span-subtitle-color            : #808080;
+$span-subtitle-color            : $lowast-shadow;
 
 // Menu
 $menu-link-border               : transparent;
@@ -293,7 +294,7 @@ $site-author-name-align               : center;
 $site-author-name-weight              : normal;
 
 $site-description-font-size           : 14px;
-$site-description-color               : $grey-dark;
+$site-description-color               : $gray-dark;
 $site-description-margin-top          : 5px;
 $site-description-align               : center;
 
@@ -304,10 +305,10 @@ $site-state-item-name-font-size       : 13px;
 $site-state-item-name-color           : inherit;
 $site-state-item-border-color         : $black-dim;
 
-$toc-link-color                       : $grey-dark;
+$toc-link-color                       : $gray-dark;
 $toc-link-border-color                : $black-light;
 $toc-link-hover-color                 : $black-deep;
-$toc-link-hover-border-color          : $grey-light;
+$toc-link-hover-border-color          : $gray-light;
 $toc-link-active-color                : $sidebar-highlight;
 $toc-link-active-border-color         : $sidebar-highlight;
 $toc-link-active-current-color        : $sidebar-highlight;
