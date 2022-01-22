@@ -10,13 +10,27 @@ $(document).ready(function() {
     });
 
     // change home page li structure in mobile
-    if(window.NexT.utils.isMobile()) {
-        const spanWrapper = $(".span-wrapper");
-        Array.prototype.forEach.call(spanWrapper, (wrapper) => {
-            let period = $(wrapper).children("span").eq(1);
-            period.detach();
-            $(wrapper).parent().append(period);
-        });
+    if(window.matchMedia('(max-width: 767px)').matches || window.NexT.utils.isMobile()) {
+        $(".project .period-inner").hide();
+        $(".project .period").not(".period-inner").show();
+    } else {
+        $(".project .period-inner").show();
+        $(".project .period").not(".period-inner").hide();
     }
+
+    let timerHandler;
+    $(window).on("resize", () => {
+        clearTimeout(timerHandler);
+
+        timerHandler = setTimeout(() => {
+            if(window.matchMedia('(max-width: 767px)').matches || window.NexT.utils.isMobile()) {
+                $(".project .period-inner").hide();
+                $(".project .period").not(".period-inner").show();
+            } else {
+                $(".project .period-inner").show();
+                $(".project .period").not(".period-inner").hide();
+            }
+        }, 300);
+    });
 })
 
