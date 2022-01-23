@@ -12,10 +12,10 @@ $(document).ready(function() {
     // change home page li structure in mobile
     if(window.matchMedia('(max-width: 767px)').matches || window.NexT.utils.isMobile()) {
         $(".project .period-inner").hide();
-        $(".project .period").not(".period-inner").show();
+        $(".project .period-outer").show();
     } else {
         $(".project .period-inner").show();
-        $(".project .period").not(".period-inner").hide();
+        $(".project .period-outer").hide();
     }
 
     let timerHandler;
@@ -25,10 +25,10 @@ $(document).ready(function() {
         timerHandler = setTimeout(() => {
             if(window.matchMedia('(max-width: 767px)').matches || window.NexT.utils.isMobile()) {
                 $(".project .period-inner").hide();
-                $(".project .period").not(".period-inner").show();
+                $(".project .period-outer").show();
             } else {
                 $(".project .period-inner").show();
-                $(".project .period").not(".period-inner").hide();
+                $(".project .period-outer").hide();
             }
         }, 300);
     });

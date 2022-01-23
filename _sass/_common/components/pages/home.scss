@@ -50,10 +50,6 @@
 
                     @include mobile() { width: 100%; }
                 }
-
-                .period-inner {
-                    width: auto !important;
-                }
                 
                 .period {
                     width: 100%;
@@ -89,7 +85,6 @@
         .eng {
             font-size: 28px;
             font-weight: 600;
-            text-indent: 5px;
         }
     }
     
@@ -140,6 +135,7 @@
                 @include mobile() { height: auto; }
 
                 .content {
+                    width: 100%;
                     height: 30px;
                     padding-top: 9px;
                     text-indent: 16px;
@@ -175,5 +171,9 @@
                 z-index: -1;
             }
         }
+    }
+
+    .project {
+        .period-inner { width: auto !important; }
     }
 }
