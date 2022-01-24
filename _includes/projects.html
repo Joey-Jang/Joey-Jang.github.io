@@ -1,10 +1,12 @@
 <section id="posts" class="posts-expand">
-  {% assign paginate = site.blog.paginate | default: site.paginate  %}
-  {% assign paginate_path = site.blog.paginate_path | default: site.paginate_path  %}
+  test message in projects page
+  
+  {% assign paginate = site.project.paginate | default: site.paginate  %}
+  {% assign paginate_path = site.project.paginate_path | default: site.paginate_path  %}
 
-  {% for post in site.posts %}
+  {% for project in site.projects %}
     {% assign is_index = true %}
-    {% include _macro/post.html %}
+    {% include _macro/project.html %}
   {% endfor %}
 </section>
 
