@@ -38,7 +38,7 @@
                 </span>
               {% endif %}
               <a class="post-title-link post-title-link-external" target="_blank" href="{{ post.link }}" itemprop="url">
-                {% if post.title %}{{ post.title }}{% else %}{{  post.link }}{% endif %}
+                {% if post.title %}{{ post.title }}{% else %}{{ post.link }}{% endif %}
                 <i class="fa fa-external-link"></i>
               </a>
             {% else %}
@@ -115,17 +115,6 @@
           {% endif %}
 
           {% if post.comments %}
-            {% if site.facebook_comments_plugin.enable %}
-              <!-- <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="{{ post.url | relative_url }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="{{ post.url | absolute_url }}" itemprop="commentCount">0</span> comments
-                </a>
-              </span> -->
-            {% endif %}
             {% if site.disqus.enable and site.disqus.count %}
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
@@ -271,33 +260,27 @@
 
     <footer class="post-footer">
       {% unless is_index %}
-      {% if site.facebook_sdk.enable and site.facebook_sdk.like_button %}
-        {% assign facebook_sdk = true %}
-      {% endif %}
-      {% endunless %}
+        {% if post.previous or post.next %}
+          <div class="post-nav" id="post-nav-id">
+            <div class="post-nav-next post-nav-item">
+              {% if post.next %}
+                <a href="{{ post.next.url | relative_url }}" rel="next" title="{{ post.next.title }}">
+                  <i class="fa fa-chevron-left"></i> {{ post.next.title }}
+                </a>
+              {% endif %}
+            </div>
 
-      {% unless is_index %}
-      {% if post.previous or post.next %}
-        <div class="post-nav" id="post-nav-id">
-          <div class="post-nav-next post-nav-item">
-            {% if post.next %}
-              <a href="{{ post.next.url | relative_url }}" rel="next" title="{{ post.next.title }}">
-                <i class="fa fa-chevron-left"></i> {{ post.next.title }}
-              </a>
-            {% endif %}
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              {% if post.previous %}
+                <a href="{{ post.previous.url | relative_url }}" rel="prev" title="{{ post.previous.title }}">
+                  {{ post.previous.title }} <i class="fa fa-chevron-right"></i>
+                </a>
+              {% endif %}
+            </div>
           </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            {% if post.previous %}
-              <a href="{{ post.previous.url | relative_url }}" rel="prev" title="{{ post.previous.title }}">
-                {{ post.previous.title }} <i class="fa fa-chevron-right"></i>
-              </a>
-            {% endif %}
-          </div>
-        </div>
-      {% endif %}
+        {% endif %}
       {% endunless %}
 
       {% if is_index %}

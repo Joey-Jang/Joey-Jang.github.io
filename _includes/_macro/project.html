@@ -1,19 +1,9 @@
 {% comment %} project(proejct, is_index, project_extra_class) {% endcomment %}
 
-  <!-- {% if 'quote, picture' contains project.type %}
-    {% assign headlessPost = true %}
-  {% endif %}
-
-  {% assign post_class = 'post post-type-' | append: post.type | default: 'normal' %}
-  {% assign post_class = post_class | append: ' ' | append: post_extra_class | default: '' %}
-  {% if project.sticky > 0 %}
-    {% assign post_class = post_class | append: ' ' | append: 'post-sticky' %}
-  {% endif %} -->
-
   <article class="{{ post_class }}" itemscope itemtype="http://schema.org/Article" {% if route %}route="{{ route }}"{% endif %}>
     test message in project article
-    {{ content }}
-    <!-- <link itemprop="mainEntityOfPage" href="{{ post.url | absolute_url }}">
+    {{ project.content }}
+    <link itemprop="mainEntityOfPage" href="{{ project.url | absolute_url }}">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="{{ site.author }}">
@@ -29,41 +19,30 @@
       <header class="post-header">
 
         {% comment %} % Not to show title for quote posts that do not have a title {% endcomment %}
-        {% unless is_index and project.type == 'quote' and project.title == nil %}
-          <{% if site.seo %}h2{% else %}h1{% endif %} class="post-title" itemprop="name headline">
+        <{% if site.seo %}h2{% else %}h1{% endif %} class="post-title" itemprop="name headline">
           {% comment %} Link posts {% endcomment %}
           {% if project.link %}
+            <a class="post-title-link post-title-link-external" target="_blank" href="{{ project.link }}" itemprop="url">
+              {% if project.title %}{{ project.title }}{% else %}{{ project.link }}{% endif %}
+              <i class="fa fa-external-link"></i>
+            </a>
+          {% else %}
+            {% if is_index %}
               {% if project.sticky > 0 %}
-                {{ project.sticky }}
                 <span class="post-sticky-flag" title="{{ __.project.sticky }}">
                   <i class="fa fa-thumb-tack"></i>
                 </span>
               {% endif %}
-              <a class="post-title-link post-title-link-external" target="_blank" href="{{ project.link }}" itemprop="url">
-                {% if project.title %}{{ project.title }}{% else %}{{  project.link }}{% endif %}
-                <i class="fa fa-external-link"></i>
-              </a>
-            {% else %}
-            {% if is_index %}
-                {% if project.sticky > 0 %}
-                  <span class="post-sticky-flag" title="{{ __.project.sticky }}">
-                    <i class="fa fa-thumb-tack"></i>
-                  </span>
-                {% endif %}
-                <a class="post-title-link" href="{{ post.url | relative_url }}" itemprop="url">
+              <a class="post-title-link" href="{{ post.url | relative_url }}" itemprop="url">
                 {{ project.title | default: __.project.untitled }}
               </a>
             {% else %}{{ project.title }}{% endif %}
           {% endif %}
         </{% if site.seo %}h2{% else %}h1{% endif %}>
-        {% endunless %}
 
         <div class="post-meta">
           <span class="post-time">
             {% if site.post_meta.created_at %}
-              <!-- <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span> -->
               {% if site.post_meta.item_text %}
                 <span class="post-meta-item-text">{{ __.post.posted }}</span>
               {% endif %}
@@ -77,9 +56,6 @@
             {% endif %}
 
             {% if site.post_meta.updated_at %}
-              <!-- <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span> -->
               {% if site.post_meta.item_text %}
                 <span class="post-meta-item-text">{{ __.project.modified }}</span>
               {% endif %}
@@ -94,9 +70,6 @@
             {% if site.post_meta.created_at or site.post_meta.updated_at %}
               <span class="post-meta-divider">|</span>
             {% endif %}
-              <!-- <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span> -->
               {% if site.post_meta.item_text %}
                 <span class="post-meta-item-text">{{ __.project.in }}</span>
               {% endif %}
@@ -117,22 +90,9 @@
           {% endif %}
 
           {% if project.comments %}
-            {% if site.facebook_comments_plugin.enable %}
+            {% if site.disqus.enable and site.disqus.count %}
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <!-- <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span> -->
-                <a href="{{ project.url | relative_url }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="{{ project.url | absolute_url }}" itemprop="commentCount">0</span> comments
-                </a>
-              </span>
-            {% elsif site.disqus.enable and site.disqus.count %}
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <!-- <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span> -->
                 <a href="{{ project.url | relative_url }}#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
                         data-disqus-identifier="{{ project.url }}" itemprop="commentCount"></span>
@@ -216,33 +176,12 @@
       {% if is_index %}
         {% if project.description and site.excerpt_description %}
           {{ project.description }}
-          <!--noindex-->
-          <!-- <div class="post-button text-center">
-            <a class="btn" href="{{ post.url | relative_url }}">
-              {{ __.post.read_more }} &raquo;
-            </a>
-          </div> -->
-          <!--/noindex-->
-        {% elsif project.excerpt  %}
+        {% elsif project.excerpt %}
           {% include _macro/post-excerpt.html %}
-          <!--noindex-->
-          <!-- <div class="post-button text-center">
-            <a class="btn" href="{{ post.url | relative_url }}{% if site.scroll_to_more %}#{{ __.post.more }}{% endif %}" rel="contents">
-              {{ __.post.read_more }} &raquo;
-            </a>
-          </div> -->
-          <!--/noindex-->
         {% elsif site.auto_excerpt.enable %}
           {% assign content = project.content | strip_html %}
           {{ content | slice: 0, site.auto_excerpt.length }}
           {% if content.size > site.auto_excerpt.length %}...{% endif %}
-          <!--noindex-->
-          <!-- <div class="post-button text-center">
-            <a class="btn" href="{{ post.url | relative_url }}{% if site.scroll_to_more %}#{{ __.post.more }}{% endif %}" rel="contents">
-              {{ __.post.read_more }} &raquo;
-            </a>
-          </div> -->
-          <!--/noindex-->
         {% else %}
           {% if project.type == 'picture' %}
             <a href="{{ post.url | relative_url }}">{{ project.content }}</a>
@@ -272,33 +211,27 @@
       {% endif %}
 
       {% unless is_index %}
-      {% if site.facebook_sdk.enable and site.facebook_sdk.like_button %}
-        {% assign facebook_sdk = true %}
-      {% endif %}
-      {% endunless %}
+        {% if project.previous or project.next %}
+          <div class="post-nav" id="post-nav-id">
+            <div class="post-nav-next post-nav-item">
+              {% if project.next %}
+                <a href="{{ project.next.url | relative_url }}" rel="next" title="{{ project.next.title }}">
+                  <i class="fa fa-chevron-left"></i> {{ project.next.title }}
+                </a>
+              {% endif %}
+            </div>
 
-      {% unless is_index %}
-      {% if project.previous or project.next %}
-        <div class="post-nav" id="post-nav-id">
-          <div class="post-nav-next post-nav-item">
-            {% if project.next %}
-              <a href="{{ project.next.url | relative_url }}" rel="next" title="{{ project.next.title }}">
-                <i class="fa fa-chevron-left"></i> {{ project.next.title }}
-              </a>
-            {% endif %}
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              {% if project.previous %}
+                <a href="{{ project.previous.url | relative_url }}" rel="prev" title="{{ project.previous.title }}">
+                  {{ project.previous.title }} <i class="fa fa-chevron-right"></i>
+                </a>
+              {% endif %}
+            </div>
           </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            {% if project.previous %}
-              <a href="{{ project.previous.url | relative_url }}" rel="prev" title="{{ project.previous.title }}">
-                {{ project.previous.title }} <i class="fa fa-chevron-right"></i>
-              </a>
-            {% endif %}
-          </div>
-        </div>
-      {% endif %}
+        {% endif %}
       {% endunless %}
 
       {% if is_index %}
