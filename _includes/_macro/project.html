@@ -2,7 +2,10 @@
 
   <article class="{{ post_class }}" itemscope itemtype="http://schema.org/Article" {% if route %}route="{{ route }}"{% endif %}>
     test message in project article
-    {{ project.content }}
+    test thumbnail
+    <img src="{{ project.thumbnail }}">
+    test url : {{ project.url | relative_url }}
+
     <link itemprop="mainEntityOfPage" href="{{ project.url | absolute_url }}">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -17,7 +20,6 @@
 
     {% unless headlessPost %}
       <header class="post-header">
-
         {% comment %} % Not to show title for quote posts that do not have a title {% endcomment %}
         <{% if site.seo %}h2{% else %}h1{% endif %} class="post-title" itemprop="name headline">
           {% comment %} Link posts {% endcomment %}
@@ -33,7 +35,7 @@
                   <i class="fa fa-thumb-tack"></i>
                 </span>
               {% endif %}
-              <a class="post-title-link" href="{{ post.url | relative_url }}" itemprop="url">
+              <a class="post-title-link" href="{{ project.url | relative_url }}" itemprop="url">
                 {{ project.title | default: __.project.untitled }}
               </a>
             {% else %}{{ project.title }}{% endif %}
@@ -151,7 +153,6 @@
     {% endunless %}
 
     <div class="post-body" itemprop="articleBody">
-
       {% comment %} Gallery support {% endcomment %}
       {% if project.photos and project.photos.size > 0 %}
         <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
@@ -177,20 +178,20 @@
         {% if project.description and site.excerpt_description %}
           {{ project.description }}
         {% elsif project.excerpt %}
-          {% include _macro/post-excerpt.html %}
+          {% include _macro/project-excerpt.html %}
         {% elsif site.auto_excerpt.enable %}
           {% assign content = project.content | strip_html %}
           {{ content | slice: 0, site.auto_excerpt.length }}
           {% if content.size > site.auto_excerpt.length %}...{% endif %}
         {% else %}
           {% if project.type == 'picture' %}
-            <a href="{{ post.url | relative_url }}">{{ project.content }}</a>
+            <a href="{{ project.url | relative_url }}">{{ project.content }}</a>
           {% else %}
-            {% include _macro/post-content.html %}
+            {% include _macro/project-content.html %}
           {% endif %}
         {% endif %}
       {% else %}
-        {% include _macro/post-content.html %}
+        {% include _macro/project-content.html %}
       {% endif  %}
     </div>
 
@@ -244,5 +245,5 @@
           <hr class="post-eof"></hr>
         {% endunless %}
       {% endif %}
-    </footer> -->
+    </footer>
   </article>
