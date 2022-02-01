@@ -18,20 +18,23 @@ baseurl:
 permalink: pretty
 
 # Pagination
-paginate: 10
+# paginate: 10
 # paginate_path: "/page:num/"
 # archive:
 #   paginate: 10
 #   paginate_path: "/page:num/"
-# category:
-#   paginate: 10
-#   paginate_path: "/page:num/"
-# tag:
-#   paginate: 10
-#   paginate_path: "/page:num/"
-# project:
-#   paginate: 10
-#   paginate_path: "/page:num/"
+category:
+  paginate: 10
+  paginate_path: "/page:num/"
+tag:
+  paginate: 10
+  paginate_path: "/page:num/"
+projects:
+  paginate: 10
+  paginate_path: "/page:num/"
+blog:
+  paginate: 10
+  paginate_path: "/page:num/"
 
 # Handling Reading
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "Gemfile", "Gemfile.lock", "README_en.md", "vendor"]
@@ -377,7 +380,7 @@ highlight_theme: normal
 mathjax:
   enable: true
   per_page: false
-  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
+  cdn: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML
 
 # Swiftype Search API Key
 #swiftype_key:

@@ -2,7 +2,17 @@
   {% assign paginate = site.project.paginate | default: site.paginate  %}
   {% assign paginate_path = site.project.paginate_path | default: site.paginate_path  %}
 
-  {% for project in site.projects %}
+  {% for post in site.projects %}
+    {% if paginate > 0 %}
+      {% assign page_num = forloop.index0 | divided_by: paginate | plus: 1 %}
+      {% if page_num == 1 %}
+        {% assign route = '/' %}
+      {% else %}
+        {% assign route = paginate_path | replace: ':num', page_num %}
+      {% endif %}
+      {% assign index0_modulo_paginate = forloop.index0 | modulo: paginate %}
+    {% endif %}
+
     {% assign is_index = true %}
     {% include _macro/project.html %}
   {% endfor %}
