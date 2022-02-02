@@ -95,7 +95,8 @@
                 <i class="fa fa-folder-o"></i>
               </span> -->
               {% if site.post_meta.item_text %}
-                <span class="post-meta-item-text">{{ __.post.in }}</span>
+                <!-- <span class="post-meta-item-text">{{ __.post.in }}</span> -->
+                <span class="lowast">&lowast;</span>
               {% endif %}
               {% for cat in post.categories %}
                 {% assign cat_url_encode = cat | url_encode | replace: '+', '%20' %}
@@ -189,7 +190,6 @@
     <div class="post-body" itemprop="articleBody">
       {% comment %} Gallery support {% endcomment %}
       {% if post.photos and post.photos.size > 0 %}
-        *** test0 ***
         <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
           {% assign COLUMN_NUMBER = 3 %}
           {% for photo in post.photos %}
@@ -211,7 +211,6 @@
 
       {% if is_index %}
         {% if post.description and site.excerpt_description %}
-          *** test1 ***
           {{ post.description }}
           <!--noindex-->
           <!-- <div class="post-button text-center">
@@ -221,7 +220,6 @@
           </div> -->
           <!--/noindex-->
         {% elsif post.excerpt  %}
-        *** test2 ***
           {% include _macro/post-excerpt.html %}
           <!--noindex-->
           <!-- <div class="post-button text-center">
@@ -231,7 +229,6 @@
           </div> -->
           <!--/noindex-->
         {% elsif site.auto_excerpt.enable %}
-        *** test3 ***
           {% assign content = post.content | strip_html %}
           {{ content | slice: 0, site.auto_excerpt.length }}
           {% if content.size > site.auto_excerpt.length %}...{% endif %}
@@ -243,7 +240,6 @@
           </div> -->
           <!--/noindex-->
         {% else %}
-        *** test4 ***
           {% if post.type == 'picture' %}
             <a href="{{ post.url | relative_url }}">{{ post.content }}</a>
           {% else %}
@@ -251,7 +247,6 @@
           {% endif %}
         {% endif %}
       {% else %}
-        *** test5 ***
         {% include _macro/post-content.html %}
       {% endif  %}
     </div>

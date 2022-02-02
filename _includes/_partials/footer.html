@@ -8,16 +8,18 @@
 </div>
 
 {% if site.copyright %}
-<div class="powered-by">
-  {{ __.footer.powered | replace: '%s', '<a class="theme-link" href="https://jekyllrb.com">Jekyll</a>') }}
-</div>
-  <span class="lowast">
-    &lowast;
-  </span>
-<div class="theme-info">
-  {{ __.footer.theme }} -
-  <a class="theme-link" href="https://github.com/simpleyyt/jekyll-theme-next">
-    NexT.{{ site.scheme }}
-  </a>
+<div class="footer-wapper">
+  <div class="powered-by">
+    {{ __.footer.powered | replace: '%s', '<a class="theme-link" href="https://jekyllrb.com">Jekyll</a>') }}
+  </div>
+    <span class="lowast">
+      &lowast;
+    </span>
+  <div class="theme-info">
+    {{ __.footer.theme }} -
+    <a class="theme-link" href="https://github.com/simpleyyt/jekyll-theme-next">
+      NexT.{{ site.scheme }}
+    </a>
+  </div>
 </div>
 {% endif %}

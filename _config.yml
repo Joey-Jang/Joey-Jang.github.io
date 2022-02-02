@@ -16,6 +16,8 @@ date_format: '%Y-%m-%d'
 url: 'https://joey-jang.github.io'
 baseurl:
 permalink: pretty
+thumbnailurl: /assets/images/projects/thumbnail/
+contenturl: /assets/images/projects/content/
 
 # Pagination
 # paginate: 10
@@ -56,14 +58,14 @@ kramdown:
 
 # Default Attributes
 ## Docs: https://jekyllrb.com/docs/configuration/#front-matter-defaults
-# defaults:
-#   -
-#     scope:
-#       path: ""
-#       type: "posts"
-#     values:
-#       layout: "post"
-#       comments: true
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
 
 # Atom feed
 feed:

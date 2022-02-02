@@ -7,22 +7,31 @@
 
 .footer-inner { text-align: center; }
 
-.powered-by,
-.theme-info {
-  display: inline-block;
-  width: 140px;
-  
-  a {
-    border-bottom: none;
+.footer-wapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  .powered-by,
+  .theme-info {
+    display: inline-block;
+    width: 140px;
+    
+    a {
+      border-bottom: none;
+    }
   }
 }
 
 .powered-by {
   text-align: right;
+  margin-right: 10px;
 }
 
 .theme-info {
   text-align: left;
+  margin-left: 10px;
 }
 
 .cc-license {

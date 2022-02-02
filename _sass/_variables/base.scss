@@ -44,7 +44,8 @@ $link-decoration-color        : $gray-light;
 $link-decoration-hover-color  : $theme-cc;
 
 // Global border color.
-$border-color                 : #f0f0f0;
+$header-border-color          : #f0f0f0;
+$border-color                 : #e8e8e8;
 
 // Background color for <body>
 $body-bg-color                : #fdfdfd;
@@ -176,18 +177,18 @@ $btn-default-hover-border-color : $black-deep;
 // Pagination
 // --------------------------------------------------
 
-$pagination-border              : $gainsboro;
+$pagination-border              : $gray-lighter;
 
 $pagination-link-bg             : transparent;
 $pagination-link-color          : $link-color;
 $pagination-link-border         : $gainsboro;
 
 $pagination-link-hover-bg       : transparent;
-$pagination-link-hover-color    : $black-deep;
+$pagination-link-hover-color    : $theme-cc;
 $pagination-link-hover-border   : $black-deep;
 
 $pagination-active-bg           : $gray-light;
-$pagination-active-color        : white;
+$pagination-active-color        : $theme;
 $pagination-active-border       : $gray-light;
 
 
@@ -229,8 +230,8 @@ $head-bg                        : transparent;
 
 // Site Meta
 $site-meta-text-align           : center;
-$brand-color                    : $black-deep;
-$brand-hover-color              : $theme;
+$brand-color                    : $theme;
+$brand-hover-color              : $theme-cc;
 $brand-bg                       : white;
 
 $logo-font-size                 : 20px;
@@ -334,8 +335,10 @@ $full-image-margin-vertical   : 25px;
 
 //  .post-expand .post-eof
 //  In Muse scheme, margin above and below the post separator
-$post-eof-margin-top          : 60px;  //  or 160px for more white space
-$post-eof-margin-bottom       : 60px;  //  or 120px for less white space
+$post-eof-margin-top              : 60px;  //  or 160px for more white space
+$post-eof-margin-bottom           : 60px;  //  or 120px for less white space
+$project-eof-margin-bottom        : 65px;
+$project-thumbnail-margin-bottom  : 15px;
 
 
 // Iconography

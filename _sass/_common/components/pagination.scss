@@ -17,15 +17,17 @@
 
 .pagination {
   .prev, .next, .page-number {
+    width: 36px;
+
     @extend .page-number-basic;
     border-bottom: 0;
-    border-top: 1px solid $pagination-link-border;
-    transition-property: border-color;
+    // border-top: 1px solid $pagination-link-border;
+    // transition-property: border-color;
     @include the-transition();
 
     &:hover {
       color: $pagination-link-hover-color;
-      border-top-color: $pagination-link-hover-border;
+      // border-top-color: $pagination-link-hover-border;
     }
   }
 
@@ -40,8 +42,22 @@
 
   @at-root %page-number-current {
     color: $pagination-active-color;
-    background: $pagination-active-bg;
-    border-top-color: $pagination-active-border;
+    font-weight: 500;
+    // background: $pagination-active-bg;
+    // border-top-color: $pagination-active-border;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 10%;
+      bottom: 5%;
+      width: 80%;
+      height: 40%;
+      background-color: $gainsboro;
+      border-radius: 50%;
+      transform: rotate(-10deg);
+      z-index: -1;
+    }
   }
 
   .page-number.current {

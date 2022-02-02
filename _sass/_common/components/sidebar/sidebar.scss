@@ -23,17 +23,6 @@
   @include mobile() {
     display: none !important;
   }
-
-  .category-list-item a {
-    color: $black-light;
-    border-bottom-color: transparent;
-
-    @include the-transition();
-      &:hover {
-        color: $link-hover-color;
-        border-bottom: 1px solid $link-decoration-hover-color;
-      }
-  }
 }
 
 .sidebar-inner {

@@ -14,8 +14,9 @@
 
 .posts-collapse {
   position: relative;
-  z-index: $zindex-1;
+  height: 100px;
   padding-top: 60px;
+  z-index: $zindex-1;
 
   // &::after {
   //   content: " ";
@@ -32,6 +33,28 @@
   margin-left: $posts-collapse-left;
   @include mobile() { margin: 0 20px; }
 
+  .category-title-wrapper {
+    position: relative;
+
+    .lowast {
+      font-size: 30px;
+      line-height: 30px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      bottom: -18px;
+      width: 57px;
+      height: 31px;
+      border: 2px solid $theme;
+      border-radius: 50%;
+      transform: rotate(-10deg);
+      z-index: -1;
+    }
+  }
+
   .collection-title {
     position: relative;
     // margin: 60px 0;
@@ -41,23 +64,30 @@
 
     small { color: $gray; margin-left: 5px; }
 
-    // &::before {
-    //   content: " ";
-    //   position: absolute;
-    //   left: 0;
-    //   top: 50%;
-    //   margin-left: -4px;
-    //   margin-top: -4px;
-    //   width: 8px;
-    //   height: 8px;
-    //   background: $gray;
-    //   @include circle();
-    // }
-
     hr {
       margin: 20px 0; 
       height: 1px;
       background: $gray-light;
+    }
+  }
+
+  &.tag-title .collection-title {
+    h1, h2 {
+      padding: 2px 10px;
+      color: $theme-cc;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -5%;
+        bottom: -5%;
+        width: 110%;
+        height: 110%;
+        border: 3px solid $gainsboro;
+        border-radius: 50%;
+        transform: rotate(-10deg);
+        z-index: -1;
+      }
     }
   }
 

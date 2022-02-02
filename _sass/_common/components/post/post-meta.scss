@@ -39,6 +39,7 @@
     display: inline-block;
   }
 }
+
 .post-meta-item-text {
   @include tablet() {
     display: none;

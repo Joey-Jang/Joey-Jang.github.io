@@ -30,8 +30,9 @@
     margin: 0;
     padding: 0;
     background: white;
-    border-top: 1px solid $border-color;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid $header-border-color;
+    box-shadow: 0 4px 6px 0 $gray-light;
+    z-index: -1;
   }
   @include tablet() { display: block !important; }
   @include desktop() { display: block !important; }

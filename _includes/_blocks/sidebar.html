@@ -17,6 +17,9 @@
 {% when 'schedule' %}
   {% assign is_post = false %}
   {% capture sidebar %}{% include _macro/sidebar.html %}{% endcapture %}
+{% when 'projects' %}
+  {% assign is_post = false %}
+  {% capture sidebar %}{% include _macro/sidebar.html %}{% endcapture %}
 {% when 'blog' %}
   {% assign is_post = false %}
   {% capture sidebar %}{% include _macro/sidebar-category.html %}{% endcapture %}

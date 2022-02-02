@@ -4,11 +4,14 @@
     margin: $post-eof-margin-top auto $post-eof-margin-bottom;
     // width: 8%;
     height: 1px;
-    background: $gainsboro;
+    background: $border-color;
     // text-align: center;
   }
 }
 
+.project {
+  .post-eof { margin-bottom: $project-eof-margin-bottom; }
+}
 
 .post:last-child {
   .post-eof.post-eof.post-eof {

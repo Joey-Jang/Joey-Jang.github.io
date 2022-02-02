@@ -1,11 +1,14 @@
-<section id="posts" class="posts-collapse" hidden>
-  <div class="collection-title">
-    <{% if site.seo %}h2{% else %}h1{% endif %}>
-    {{ page.title }}
-    <small>{{  __.title.category  }}</small>
-    </{% if site.seo %}h2{% else %}h1{% endif %}>
-    <hr>
-  </div>
+<section id="posts" class="posts-collapse category-title" hidden>
+  <span class="category-title-wrapper">
+    <span class="lowast">&lowast;</span>
+    <div class="collection-title">
+      <{% if site.seo %}h2{% else %}h1{% endif %}>
+      {{ page.title }}
+      <!-- <small>{{  __.title.category  }}</small> -->
+      </{% if site.seo %}h2{% else %}h1{% endif %}>
+      <!-- <hr> -->
+    </div>
+  </span>
 </section>
 
 <section id="posts" class="posts-expand">

@@ -27,9 +27,10 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  color: $brand-color;
   background: $brand-bg;
   border-bottom: none;
+
+  &:hover { color: $black-deep; }
 }
 
 .logo {

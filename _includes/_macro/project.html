@@ -4,7 +4,7 @@
     {% assign headlessPost = true %}
   {% endif %}
 
-  {% assign post_class = 'post post-type-' | append: post.type | default: 'normal' %}
+  {% assign post_class = 'project post post-type-' | append: post.type | default: 'normal' %}
   {% assign post_class = post_class | append: ' ' | append: post_extra_class | default: '' %}
   {% if post.sticky > 0 %}
     {% assign post_class = post_class | append: ' ' | append: 'post-sticky' %}
@@ -27,6 +27,11 @@
       <header class="post-header">
         {% comment %} % Not to show title for quote posts that do not have a title {% endcomment %}
         {% unless is_index and post.type == 'quote' and post.title == nil %}
+          {% if post.thumbnail %}
+            <a href="{{ post.url }}">
+              <div class="project-thumbnail" style="background:center / cover no-repeat url('{{ site.thumbnailurl | append: post.thumbnail }}');"></div>
+            </a>
+          {% endif %}
           <{% if site.seo %}h2{% else %}h1{% endif %} class="post-title" itemprop="name headline">
           {% comment %} Link posts {% endcomment %}
           {% if post.link %}
@@ -55,75 +60,9 @@
         </{% if site.seo %}h2{% else %}h1{% endif %}>
         {% endunless %}
 
-        <div class="post-meta">
-          <span class="post-time">
-            {% if site.post_meta.created_at %}
-              {% if site.post_meta.item_text %}
-                <span class="post-meta-item-text">{{ __.post.posted }}</span>
-              {% endif %}
-              <time title="{{ __.post.created }}" itemprop="dateCreated datePublished" datetime="{{ post.date | date_to_xmlschema }}">
-                {{ post.date | date: site.date_format }}
-              </time>
-            {% endif %}
+        <!-- <div class="post-meta">
+        </div> -->
 
-            {% if site.post_meta.created_at and site.post_meta.updated_at %}
-              <span class="post-meta-divider">|</span>
-            {% endif %}
-
-            {% if site.post_meta.updated_at %}
-              {% if site.post_meta.item_text %}
-                <span class="post-meta-item-text">{{ __.post.modified }}</span>
-              {% endif %}
-              <time title="{{ __.post.modified }}" itemprop="dateModified" datetime="{{ post.updated | date: site.date_format }}">
-                {{ post.updated | date: site.date_format }}
-              </time>
-            {% endif %}
-          </span>
-
-          {% if post.categories and post.categories.size > 0 and site.post_meta.categories %}
-            <span class="post-category" >
-            {% if site.post_meta.created_at or site.post_meta.updated_at %}
-              <span class="post-meta-divider">|</span>
-            {% endif %}
-              {% if site.post_meta.item_text %}
-                <span class="post-meta-item-text">{{ __.post.in }}</span>
-              {% endif %}
-              {% for cat in post.categories %}
-                {% assign cat_url_encode = cat | url_encode | replace: '+', '%20' %}
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="{{ '/category/#/' | relative_url | append: cat_url_encode }}" itemprop="url" rel="index">
-                    <span itemprop="name">{{ cat }}</span>
-                  </a>
-                </span>
-
-                {% assign cat_length = post.categories.size %}
-                {% if cat_length > 1 and forloop.index != cat_length %}
-                  {{ __.symbol.comma }}
-                {% endif %}
-              {% endfor %}
-            </span>
-          {% endif %}
-
-          {% if post.comments %}
-            {% if site.disqus.enable and site.disqus.count %}
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="{{ post.url | relative_url }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="{{ post.url }}" itemprop="commentCount"></span>
-                </a>
-              </span>
-            {% endif %}
-          {% endif %}
-
-          {% unless site.excerpt_description and is_index %}
-            {% if site.description %}
-                <div class="post-description">
-                    {{ post.description }}
-                </div>
-            {% endif %}
-          {% endunless %}
-        </div>
         {% unless is_index %}
           {% if post.tags and post.tags.size != 0 %}
             <div class="post-tags">
@@ -140,7 +79,6 @@
     <div class="post-body" itemprop="articleBody">
       {% comment %} Gallery support {% endcomment %}
       {% if post.photos and post.photos.size > 0 %}
-        *** test0 ***
         <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
           {% assign COLUMN_NUMBER = 3 %}
           {% for photo in post.photos %}
@@ -162,18 +100,14 @@
 
       {% if is_index %}
         {% if post.description and site.excerpt_description %}
-          *** test1 ***
           {{ post.description }}
         {% elsif post.excerpt  %}
-        *** test2 ***
           {% include _macro/post-excerpt.html %}
         {% elsif site.auto_excerpt.enable %}
-        *** test3 ***
           {% assign content = post.content | strip_html %}
           {{ content | slice: 0, site.auto_excerpt.length }}
           {% if content.size > site.auto_excerpt.length %}...{% endif %}
         {% else %}
-        *** test4 ***
           {% if post.type == 'picture' %}
             <a href="{{ post.url | relative_url }}">{{ post.content }}</a>
           {% else %}
@@ -181,7 +115,6 @@
           {% endif %}
         {% endif %}
       {% else %}
-        *** test5 ***
         {% include _macro/post-content.html %}
       {% endif  %}
     </div>
