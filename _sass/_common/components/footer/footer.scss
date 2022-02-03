@@ -13,26 +13,15 @@
   justify-content: center;
   align-items: center;
 
-  .powered-by,
-  .theme-info {
-    display: inline-block;
-    width: 140px;
-    
+  .powered-by, .theme-info {
+    margin: 0 10px;
+
     a {
       border-bottom: none;
     }
   }
 }
 
-.powered-by {
-  text-align: right;
-  margin-right: 10px;
-}
-
-.theme-info {
-  text-align: left;
-  margin-left: 10px;
-}
 
 .cc-license {
   margin-top: 10px;
