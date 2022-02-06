@@ -1,10 +1,12 @@
-{% comment %} tagcloud(min_font, max_font, amount, color, start_color, end_color) {% endcomment %}
+{% comment %} tagcloud(min_size, max_size, min_weight, max_weight, amount, color, start_color, end_color) {% endcomment %}
 {% capture tagcloud %}
   {% assign tags = site.tags %}
-  {% assign max = max_font %}
-  {% assign min = min_font %}
+  {% assign min_size = min_size %}
+  {% assign max_size = max_size %}
+  {% assign min_weight = min_weight %}
+  {% assign max_weight = max_weight %}
   {% assign sizes = '' | split: '' %}
-  {% assign unit = 'px' %}
+  {% assign size_unit = 'px' %}
   {% assign start_color = start_color | split: ',' %}
   {% assign end_color = end_color | split: ',' %}
 
@@ -34,22 +36,25 @@
       {% endfor %}
     {% endif %}
 
-    {% assign tmp = max | minus: min | times: ratio %}
-    {% assign size = tmp | plus: min %}
-    {% assign tmp = size | round: 2 %}
+    {% assign tmp_size = max_size | minus: min_size | times: ratio %}
+    {% assign size = tmp_size | plus: min_size %}
+    {% assign tmp_size = size | round: 2 %}
 
-    {% assign style = 'font-size: ' | append: tmp | append: unit | append: ';' %}
+    {% assign style = 'font-size: ' | append: tmp_size | append: size_unit | append: ';' %}
+
+    {% assign style = style | append: 'font-weight: ' | append: 600 | append: ';' %}
 
     {% if color %}
       {% assign mid_color = '' | split: '' %}
       {% for i in (0..2) %}
-        {% assign tmp = end_color[i] | minus: start_color[i] | times: ratio %}
-        {% assign tmp = start_color[i] | plus: tmp | round %}
-        {% assign mid_color = mid_color | push: tmp %}
+        {% assign tmp_color = end_color[i] | minus: start_color[i] | times: ratio %}
+        {% assign tmp_color = start_color[i] | plus: tmp_color | round %}
+        {% assign mid_color = mid_color | push: tmp_color %}
       {% endfor %}
       {% assign mid_color = 'rgb(' | append: mid_color[0] | append: ',' | append: mid_color[1] | append: ',' | append: mid_color[2] | append: ')' %}
-      {% assign style = style | append: 'color: ' | append: mid_color %}
+      {% assign style = style | append: 'color: ' | append: mid_color | append: ';' %}
     {% endif %}
+
     {% assign tag_url_encode = tag[0] | url_encode | replace: '+', '%20' %}
     <a href="{{ '/tag/#/' | relative_url | append: tag_url_encode }}" style="{{ style }}">{{ tag[0] }}</a>
   {% endfor %}

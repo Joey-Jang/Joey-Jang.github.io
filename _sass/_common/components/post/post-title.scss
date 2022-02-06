@@ -6,6 +6,47 @@
   @include mobile() {
     font-size: 22px;
   }
+
+  .categories-title-wrapper {
+    position: relative;
+
+    .lowast {
+      font-size: 30px;
+      line-height: 30px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 5%;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      border: 2px solid $theme;
+      border-radius: 50%;
+      transform: rotate(-10deg);
+      z-index: -1;
+    }
+  }
+
+  .tags-title-wrapper {
+    position: relative;
+    padding: 2px 10px;
+    color: $theme-cc;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -5%;
+      bottom: -5%;
+      width: 110%;
+      height: 110%;
+      border: 3px solid $gainsboro;
+      border-radius: 50%;
+      transform: rotate(-10deg);
+      z-index: -1;
+    }
+  }
 }
 .posts-expand .post-title-link {
   display: inline-block;

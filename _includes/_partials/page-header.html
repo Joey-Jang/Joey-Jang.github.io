@@ -3,9 +3,14 @@
 {% when 'page' %}
   {% capture post_title %}
     {% if page.type == "categories" and page.title == nil %}
-      {{ __.title.categories }}
+      <span class="categories-title-wrapper">
+        <span class="lowast">&lowast;</span>
+        {{ __.title.categories }}
+      </span>
     {% elsif page.type == "tags" and page.title == nil %}
-      {{ __.title.tags }}
+      <span class="tags-title-wrapper">
+        {{ __.title.tags }}
+      </span>
     {% elsif page.type == "about" and page.title == nil %}
       {{ __.title.about }}
     {% else %}

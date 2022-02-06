@@ -98,21 +98,6 @@
     @include the-transition();
     transition-property: border;
     border-bottom: 1px dashed $gray-light;
-
-    // &::before {
-    //   content: " ";
-    //   position: absolute;
-    //   left: 0;
-    //   top: 12px;
-    //   width: 6px;
-    //   height: 6px;
-    //   margin-left: -4px;
-    //   background: $gray;
-    //   @include circle();
-    //   border: 1px solid white;
-    //   @include the-transition();
-    //   transition-property: background;
-    // }
   }
 
   .post-header:hover {
