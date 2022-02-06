@@ -37,12 +37,12 @@
     {% endif %}
 
     {% assign tmp_size = max_size | minus: min_size | times: ratio %}
-    {% assign size = tmp_size | plus: min_size %}
-    {% assign tmp_size = size | round: 2 %}
-
+    {% assign tmp_size = min_size | plus: tmp_size | round: 2 %}
     {% assign style = 'font-size: ' | append: tmp_size | append: size_unit | append: ';' %}
 
-    {% assign style = style | append: 'font-weight: ' | append: 600 | append: ';' %}
+    {% assign tmp_weight = max_weight | minus: min_weight | times: ratio %}
+    {% assign tmp_weight = min_weight | plus: tmp_weight | round: 100 %}
+    {% assign style = style | append: 'font-weight: ' | append: tmp_weight | append: ';' %}
 
     {% if color %}
       {% assign mid_color = '' | split: '' %}
