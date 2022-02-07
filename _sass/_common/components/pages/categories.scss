@@ -14,15 +14,30 @@
     padding-left: 20px;
     text-align: left;
 
-    .category-list-link {
-      position: relative;
+    .category-all-link {
       color: $black-light;
-      border-bottom-color: transparent;
+      border-bottom: none;
 
       @include the-transition();
       &:hover {
         color: $theme;
+        font-weight: 500;
       }
+      
+      &:hover + .category-list-count { color: $black-deep; }
+    }
+
+    .category-list-link {
+      position: relative;
+      color: $black-light;
+      border-bottom: none;
+
+      @include the-transition();
+      &:hover {
+        font-weight: 500;
+      }
+
+      &:hover + .category-list-count { color: $black-deep; }
 
       .lowast {
         font-size: 30px;
@@ -56,6 +71,9 @@
 
   .category-list-count {
     color: $gray;
+
+    @include the-transition();
+
     &:before {
       display: inline;
       content: " ("
