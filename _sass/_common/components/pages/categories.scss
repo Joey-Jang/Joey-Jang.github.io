@@ -21,7 +21,6 @@
       @include the-transition();
       &:hover {
         color: $theme;
-        font-weight: 500;
       }
       
       &:hover + .category-list-count { color: $black-deep; }
