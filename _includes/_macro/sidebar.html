@@ -93,6 +93,7 @@
         {% endif %}
 
         <div class="links-of-author motion-element">
+          this is social icon div
           {% if site.social %}
             {% for name_link in site.social %}
               {% assign name = name_link[0] %}
@@ -100,6 +101,7 @@
               <span class="links-of-author-item">
                 <a href="{{ link }}" target="_blank" title="{{ name }}">
                   {% if site.social_icons.enable %}
+                    social icon test
                     <i class="fa fa-fw fa-{{ site.social_icons[name] | default: 'globe' | downcase }}"></i>
                   {% endif %}
                   {{ name }}
