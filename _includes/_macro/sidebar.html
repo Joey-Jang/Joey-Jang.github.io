@@ -10,7 +10,6 @@
 
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
-
       {% if is_post and site.toc.enable %}
         {% assign display_toc = true %}
         {% assign source = page.content %}
@@ -40,8 +39,8 @@
               <p class="site-description motion-element" itemprop="description">{{ site.description }}</p>
           {% endif %}
         </div>
-        <nav class="site-state motion-element">
 
+        <nav class="site-state motion-element">
           {% if site.posts.size > 0 %}
             <div class="site-state-item site-state-posts">
               <a href="{{ site.menu.blog | relative_url }}">
@@ -76,7 +75,6 @@
               {% if hasTagsPage %}</a>{% endif %}
             </div>
           {% endif %}
-
         </nav>
 
         {% assign site_rss = site.rss %}
@@ -93,7 +91,6 @@
         {% endif %}
 
         <div class="links-of-author motion-element">
-          this is social icon div
           {% if site.social %}
             {% for name_link in site.social %}
               {% assign name = name_link[0] %}
@@ -101,7 +98,6 @@
               <span class="links-of-author-item">
                 <a href="{{ link }}" target="_blank" title="{{ name }}">
                   {% if site.social_icons.enable %}
-                    social icon test
                     <i class="fa fa-fw fa-{{ site.social_icons[name] | default: 'globe' | downcase }}"></i>
                   {% endif %}
                   {{ name }}
@@ -140,14 +136,12 @@
         {% endif %}
 
         {% include _custom/sidebar.html %}
-
       </section>
 
       {% if display_toc and toc.size > 1 %}
       <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
-
             {% if page.toc_number == nil %}
               {% assign list_number = site.toc.number %}
             {% else %}
@@ -162,7 +156,6 @@
             {% else %}
               <div class="post-toc-content">{{ toc }}</div>
             {% endif %}
-
           </div>
         </section>
       <!--/noindex-->
@@ -176,6 +169,5 @@
           {% endif %}
         </div>
       {% endif %}
-
     </div>
   </aside>

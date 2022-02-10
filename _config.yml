@@ -241,7 +241,11 @@ font:
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/Joey-Jang)
 social:
-  LinkLabel: Link
+  # LinkLabel: Link
+  Email: mailto:joey.ngn.jang@gmail.com
+  Phone: tel:010-4703-9091
+  GitHub: https://github.com/Joey-Jang
+  Blog: https://joey-jang.github.io
 
 # Social Links Icons
 # Icon Mapping:
@@ -252,8 +256,10 @@ social_icons:
   enable: true
   # Icon Mappings.
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
-  GitHub: github
-  # Twitter: twitter
+  Email: envelope
+  Phone: phone
+  GitHub: github-alt
+  Blog: cubes
 
 # Sidebar Avatar
 # in directory: /assets/images/avatar.gif

@@ -1,11 +1,12 @@
-.links-of-author { margin-top: 20px; }
+.links-of-author {
+  width: 200px;
+  margin: 20px auto 0 auto;
+}
 
 .links-of-author a {
   display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  border-bottom-color: $black-light;
+  margin: 0 10px 10px 0;
+  border-bottom: none;
   font-size: 13px;
 
   &:before {
@@ -16,6 +17,7 @@
     width: 4px;
     height: 4px;
     border-radius: 50%;
-    background: rgb(random-color(0, 255) - 50%, random-color(0, 255) - 50%, random-color(0, 255) - 50%);
+    // background: rgb(random-color(0, 255) - 50%, random-color(0, 255) - 50%, random-color(0, 255) - 50%);
+    background-color: $theme-cc;
   }
 }
