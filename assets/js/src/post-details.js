@@ -121,7 +121,7 @@ $(document).ready(function () {
   $('.post-toc a').on('click', function (e) {
     e.preventDefault();
     var targetSelector = NexT.utils.escapeSelector(decodeURIComponent(this.getAttribute('href')));
-    var offset = $(targetSelector).offset().top;
+    var offset = $(targetSelector).offset().top - $('.header-inner').height(); // if header display is fixed, offset toc scroll
 
     hasVelocity ?
       html.velocity('stop').velocity('scroll', {
