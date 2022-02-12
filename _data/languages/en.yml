@@ -24,6 +24,7 @@ menu:
   blog: Blog
 
 sidebar:
+  categories: Categories
   overview: Overview
   toc: Table of Contents
 

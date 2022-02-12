@@ -1,0 +1,33 @@
+<div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+    <div class="tag-cloud">
+      <div class="tag-cloud-tags">
+        <span class="tags-title-wrapper">
+          {{ __.title.tags }}
+        </span>
+      </div>
+    </div>
+    <div class="tag-cloud">
+      <div class="tag-cloud-tags">
+        {% assign min_size = 14 %}
+        {% assign max_size = 32 %}
+        {% assign min_weight = 400 %}
+        {% assign max_weight = 800 %}
+        {% assign amount = 15 %}
+        {% assign color = true %}
+        {% assign start_color = '102,204,153' %}
+        {% assign end_color = '255,153,102' %}
+        {% include _helper/tagcloud.html %}
+        {{ tagcloud }}
+      </div>
+    </div>
+  </div>
+</aside>
