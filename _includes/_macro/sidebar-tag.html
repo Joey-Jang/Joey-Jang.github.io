@@ -8,20 +8,21 @@
 
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
-    <div class="tag-cloud">
+    <div class="tag-cloud motion-element">
       <div class="tag-cloud-tags">
         <span class="tags-title-wrapper">
-          {{ __.title.tags }}
+          <a href="/tags/">
+            {{ __.title.tags }}
+          </a>
         </span>
       </div>
-    </div>
-    <div class="tag-cloud">
+
       <div class="tag-cloud-tags">
+        {% assign amount = 15 %}
         {% assign min_size = 14 %}
         {% assign max_size = 32 %}
         {% assign min_weight = 400 %}
-        {% assign max_weight = 800 %}
-        {% assign amount = 15 %}
+        {% assign max_weight = 700 %}
         {% assign color = true %}
         {% assign start_color = '102,204,153' %}
         {% assign end_color = '255,153,102' %}

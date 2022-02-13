@@ -1,17 +1,63 @@
 {% comment %} list_categories(paginator, prev_text, next_text) {% endcomment %}
 {% capture list_categories %}
+  {% assign categories = site.categories %}
+  {% assign sizes = '' | split: '' %}
+
   <ul class="category-list">
-    {% for cat_posts in site.categories %}
-    <li class="category-list-item">
-      {% assign cat = cat_posts[0] %}
-      {% assign posts = cat_posts[1] %}
-      {% assign cat_url_encode = cat | url_encode | replace: '+', '%20' %}
-      <a class="category-list-link" href="{{ '/category/#/' | relative_url | append: cat_url_encode }}">
-        <span class="lowast">&lowast;</span>
-        {{ cat }}
-      </a>
-      <span class="category-list-count">{{ posts.size }}</span>
-    </li>
+    {% for cat_posts in categories %}
+      {% if forloop.index > amount %}
+        {% break %}
+      {% endif %}
+      {% assign sizes = sizes | push: cat_posts[1].size %}
     {% endfor %}
+
+    {% assign sizes = sizes | uniq | sort %}
+    {% if desc %}
+      {% assign sorted_sizes = sizes | uniq | sort | reverse %}
+    {% else %}
+      {% assign sorted_sizes = sizes | uniq | sort %}
+    {% endif %}
+
+    {% if sorting %}
+      {% for size in sorted_sizes %}
+        {% for cat_posts in categories %}
+          {% if amount == 0 %}
+            {% break %}
+          {% endif %}
+
+          {% if size == cat_posts[1].size %}
+            {% assign amount = amount | minus: 1 %}
+            <li class="category-list-item">
+              {% assign cat = cat_posts[0] %}
+              {% assign posts = cat_posts[1] %}
+              {% assign cat_url_encode = cat | url_encode | replace: '+', '%20' %}
+              <a class="category-list-link" href="{{ '/category/#/' | relative_url | append: cat_url_encode }}">
+                <span class="lowast">&lowast;</span>
+                {{ cat }}
+              </a>
+              <span class="category-list-count">{{ posts.size }}</span>
+            </li>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% else %}
+      {% for cat_posts in categories %}
+        {% if forloop.index > amount %}
+          {% break %}
+        {% endif %}
+
+        <li class="category-list-item">
+          {% assign cat = cat_posts[0] %}
+          {% assign posts = cat_posts[1] %}
+          {% assign cat_url_encode = cat | url_encode | replace: '+', '%20' %}
+          <a class="category-list-link" href="{{ '/category/#/' | relative_url | append: cat_url_encode }}">
+            <span class="lowast">&lowast;</span>
+            {{ cat }}
+          </a>
+          <span class="category-list-count">{{ posts.size }}</span>
+        </li>
+      {% endfor %}
+    {% endif %}
   </ul>
+
 {% endcapture %}

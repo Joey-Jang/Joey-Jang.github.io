@@ -13,11 +13,11 @@
           {% endif %}
       </div>
       <div class="tag-cloud-tags">
+        {% assign amount = 200 %}
         {% assign min_size = 14 %}
         {% assign max_size = 32 %}
         {% assign min_weight = 400 %}
-        {% assign max_weight = 800 %}
-        {% assign amount = 200 %}
+        {% assign max_weight = 700 %}
         {% assign color = true %}
         {% assign start_color = '102,204,153' %}
         {% assign end_color = '255,153,102' %}
@@ -37,6 +37,8 @@
           {% endif %}
       </div>
       <div class="category-all">
+        {% assign sorting = false %}
+        {% assign amount = 200 %}
         {% include _helper/list_categories.html %}
         {{ list_categories }}
       </div>

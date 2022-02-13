@@ -9,25 +9,21 @@
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
     <div class="category-all-page motion-element">
-
       <div class="category-all">
-        <ul class="category-list">
-          <li class="category-list-item">
-            <a class="category-all-link" href="/categories/">
-              <span class="categories-title-wrapper">
-                <span class="lowast">&lowast;</span>
-                {{ __.title.categories }}
-              </span>
-            </a>
-          </li>
-        </ul>
+        <span class="categories-title-wrapper">
+          <a href="/categories/">
+            <span class="lowast">&lowast;</span>
+            {{ __.title.categories }}
+          </a>
+        </span>
       </div>
 
       <div class="category-all">
+        {% assign sorting = false %}
+        {% assign amount = 200 %}
         {% include _helper/list_categories.html %}
         {{ list_categories }}
       </div>
-      
     </div>
   </div>
 </aside>

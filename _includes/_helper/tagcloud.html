@@ -18,46 +18,96 @@
   {% endfor %}
 
   {% assign sizes = sizes | uniq | sort %}
+  {% if desc %}
+    {% assign sorted_sizes = sizes | uniq | sort | reverse %}
+  {% else %}
+    {% assign sorted_sizes = sizes | uniq | sort %}
+  {% endif %}
   {% assign length = sizes.size | minus: 1 %}
 
-  {% for tag in tags %}
-    {% if forloop.index > amount %}
-      {% break %}
-    {% endif %}
-
-    {% assign ratio = 0 %}
-
-    {% if length > 0 %}
-      {% for size in sizes %}
-        {% if size == tag[1].size %}
-          {% assign ratio = forloop.index0 | times: 1.0 | divided_by: length %}
+  {% if sorting %}
+    {% for size in sorted_sizes %}
+      {% for tag in tags %}
+        {% if amount == 0 %}
           {% break %}
         {% endif %}
+
+        {% if size == tag[1].size %}
+          {% assign amount = amount | minus: 1 %}
+
+          {% assign ratio = 0 %}
+          {% if length > 0 %}
+            {% for size in sizes %}
+              {% if size == tag[1].size %}
+                {% assign ratio = forloop.index0 | times: 1.0 | divided_by: length %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+
+          {% assign tmp_size = max_size | minus: min_size | times: ratio %}
+          {% assign tmp_size = min_size | plus: tmp_size | round: 2 %}
+          {% assign style = 'font-size: ' | append: tmp_size | append: size_unit | append: ';' %}
+
+          {% assign tmp_weight = max_weight | minus: min_weight | times: ratio %}
+          {% assign tmp_weight = min_weight | plus: tmp_weight | round: 100 %}
+          {% assign style = style | append: 'font-weight: ' | append: tmp_weight | append: ';' %}
+
+          {% if color %}
+            {% assign mid_color = '' | split: '' %}
+            {% for i in (0..2) %}
+              {% assign tmp_color = end_color[i] | minus: start_color[i] | times: ratio %}
+              {% assign tmp_color = start_color[i] | plus: tmp_color | round %}
+              {% assign mid_color = mid_color | push: tmp_color %}
+            {% endfor %}
+            {% assign mid_color = 'rgb(' | append: mid_color[0] | append: ',' | append: mid_color[1] | append: ',' | append: mid_color[2] | append: ')' %}
+            {% assign style = style | append: 'color: ' | append: mid_color | append: ';' %}
+          {% endif %}
+
+          {% assign tag_url_encode = tag[0] | url_encode | replace: '+', '%20' %}
+          <a class="tag" href="{{ '/tag/#/' | relative_url | append: tag_url_encode }}" style="{{ style }}">{{ tag[0] }}</a>
+        {% endif %}
       {% endfor %}
-    {% endif %}
+    {% endfor %}
+  {% else %}
+    {% for tag in tags %}
+      {% if forloop.index > amount %}
+        {% break %}
+      {% endif %}
 
-    {% assign tmp_size = max_size | minus: min_size | times: ratio %}
-    {% assign tmp_size = min_size | plus: tmp_size | round: 2 %}
-    {% assign style = 'font-size: ' | append: tmp_size | append: size_unit | append: ';' %}
+      {% assign ratio = 0 %}
+      {% if length > 0 %}
+        {% for size in sizes %}
+          {% if size == tag[1].size %}
+            {% assign ratio = forloop.index0 | times: 1.0 | divided_by: length %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
 
-    {% assign tmp_weight = max_weight | minus: min_weight | times: ratio %}
-    {% assign tmp_weight = min_weight | plus: tmp_weight | round: 100 %}
-    {% assign style = style | append: 'font-weight: ' | append: tmp_weight | append: ';' %}
+      {% assign tmp_size = max_size | minus: min_size | times: ratio %}
+      {% assign tmp_size = min_size | plus: tmp_size | round: 2 %}
+      {% assign style = 'font-size: ' | append: tmp_size | append: size_unit | append: ';' %}
 
-    {% if color %}
-      {% assign mid_color = '' | split: '' %}
-      {% for i in (0..2) %}
-        {% assign tmp_color = end_color[i] | minus: start_color[i] | times: ratio %}
-        {% assign tmp_color = start_color[i] | plus: tmp_color | round %}
-        {% assign mid_color = mid_color | push: tmp_color %}
-      {% endfor %}
-      {% assign mid_color = 'rgb(' | append: mid_color[0] | append: ',' | append: mid_color[1] | append: ',' | append: mid_color[2] | append: ')' %}
-      {% assign style = style | append: 'color: ' | append: mid_color | append: ';' %}
-    {% endif %}
+      {% assign tmp_weight = max_weight | minus: min_weight | times: ratio %}
+      {% assign tmp_weight = min_weight | plus: tmp_weight | round: 100 %}
+      {% assign style = style | append: 'font-weight: ' | append: tmp_weight | append: ';' %}
 
-    {% assign tag_url_encode = tag[0] | url_encode | replace: '+', '%20' %}
-    <a href="{{ '/tag/#/' | relative_url | append: tag_url_encode }}" style="{{ style }}">{{ tag[0] }}</a>
-  {% endfor %}
+      {% if color %}
+        {% assign mid_color = '' | split: '' %}
+        {% for i in (0..2) %}
+          {% assign tmp_color = end_color[i] | minus: start_color[i] | times: ratio %}
+          {% assign tmp_color = start_color[i] | plus: tmp_color | round %}
+          {% assign mid_color = mid_color | push: tmp_color %}
+        {% endfor %}
+        {% assign mid_color = 'rgb(' | append: mid_color[0] | append: ',' | append: mid_color[1] | append: ',' | append: mid_color[2] | append: ')' %}
+        {% assign style = style | append: 'color: ' | append: mid_color | append: ';' %}
+      {% endif %}
+
+      {% assign tag_url_encode = tag[0] | url_encode | replace: '+', '%20' %}
+      <a class="tag" href="{{ '/tag/#/' | relative_url | append: tag_url_encode }}" style="{{ style }}">{{ tag[0] }}</a>
+    {% endfor %}
+  {% endif %}
 
 {% endcapture %}
 {% assign tagcloud = tagcloud | normalize_whitespace %}

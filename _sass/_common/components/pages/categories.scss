@@ -1,5 +1,6 @@
 .categories-title-wrapper {
   position: relative;
+  color: $black-light;
   font-size: 26px;
 
   .lowast {
@@ -19,12 +20,40 @@
     transform: rotate(-10deg);
     z-index: -1;
   }
+
+  a {
+    color: unset;
+    border-bottom: unset;
+  }
 }
 
 .category-all-page {
   .category-all-title { text-align: center; }
 
-  .category-all { margin-top: 20px; }
+  .category-all {
+    margin-top: 20px;
+
+    .categories-title-wrapper {
+      .lowast {
+        @include the-transition();
+        transition-duration: 0.6s;
+        transform-origin: 52% 55%;
+      }
+      &:hover .lowast { transform: rotate(350deg); }
+
+      &::before {
+        @include the-transition();
+        transition-duration: 0.6s;
+      }
+      &:hover::before { border: 2px solid transparent; }
+      
+      a {
+        &:hover {
+          color: unset;
+        }
+      }
+    }
+  }
 
   .category-list {
     margin: 0;
@@ -37,36 +66,10 @@
     padding-left: 20px;
     text-align: left;
 
-    .category-all-link {
-      color: $black-light;
-      border-bottom: none;
-
-      @include the-transition();
-      &:hover {
-        color: $black-deep;
-      }
-      &:hover + .category-list-count { color: $black-deep; }
-
-      .categories-title-wrapper {
-        .lowast {
-          @include the-transition();
-          transition-duration: 0.6s;
-          transform-origin: 52% 55%;
-        }
-        &:hover .lowast { transform: rotate(350deg); }
-      }
-    }
-
     .category-list-link {
       position: relative;
       color: $black-light;
       border-bottom: none;
-
-      @include the-transition();
-      &:hover {
-        color: $black-deep;
-      }
-      &:hover + .category-list-count { color: $black-deep; }
 
       .lowast {
         font-size: 30px;

@@ -21,26 +21,43 @@
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             {{ __.sidebar.toc }}
           </li>
-          <li class="sidebar-nav-categories" data-target="post-categories">
-            {{ __.sidebar.categories }}
+          <li class="sidebar-nav-popular" data-target="post-popular">
+            {{ __.sidebar.popular }}
           </li>
         </ul>
       {% endif %}
 
-      <section class="post-categories sidebar-panel{% unless display_toc and toc.size > 1 %} sidebar-panel-active{% endunless %}">
+      <section class="post-popular sidebar-panel{% unless display_toc and toc.size > 1 %} sidebar-panel-active{% endunless %}">
+        <div class="post-all-wrapper motion-element">
+          <a class="post-all-link" href="/blog/">전체 글</a>
+          <span class="post-all-count">{{ site.posts.size }}</span>
+        </div>
+
         <div class="category-all-page motion-element">
-          <div class="category-all">
-            <ul class="category-list">
-              <li class="category-list-item">
-                <a class="category-all-link" href="/blog/">전체 글</a>
-                <span class="category-list-count">{{ site.categories.size }}</span>
-              </li>
-            </ul>
-          </div>
     
           <div class="category-all">
+            {% assign sorting = true %}
+            {% assign desc = true %}
+            {% assign amount = 5 %}
             {% include _helper/list_categories.html %}
             {{ list_categories }}
+          </div>
+        </div>
+
+        <div class="tag-cloud motion-element">
+          <div class="tag-cloud-tags">
+            {% assign sorting = true %}
+            {% assign desc = true %}
+            {% assign amount = 5 %}
+            {% assign min_size = 14 %}
+            {% assign max_size = 32 %}
+            {% assign min_weight = 400 %}
+            {% assign max_weight = 700 %}
+            {% assign color = true %}
+            {% assign start_color = '102,204,153' %}
+            {% assign end_color = '255,153,102' %}
+            {% include _helper/tagcloud.html %}
+            {{ tagcloud }}
           </div>
         </div>
       </section>

@@ -40,3 +40,31 @@
 @import "sidebar-blogroll";
 @import "sidebar-nav";
 @import "sidebar-toc";
+
+.post-all-wrapper {
+  .post-all-link {
+    color: $black-light;
+    border-bottom: none;
+
+    @include the-transition();
+    &:hover {
+      color: $black-deep;
+    }
+    &:hover + .post-all-count { color: $black-deep; }
+  }
+
+  .post-all-count {
+    color: $gray;
+  
+    @include the-transition();
+  
+    &:before {
+      display: inline;
+      content: " ("
+    }
+    &:after {
+      display: inline;
+      content: ") "
+    }
+  }
+}
