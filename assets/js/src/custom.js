@@ -32,5 +32,17 @@ $(document).ready(function() {
             }
         }, 300);
     });
+
+    // resize post-title width in mobile
+    if(window.matchMedia('(max-width: 767px)').matches || window.NexT.utils.isMobile()) {
+        $(".post-title-link").each((index, item) => {
+            let width = $(item).width() + 15;
+            if(width > $(".post-title").width()) {
+                width = $(".post-title").width();
+            }
+            
+            $(item).css("width", width);
+        });
+    }
 })
 
