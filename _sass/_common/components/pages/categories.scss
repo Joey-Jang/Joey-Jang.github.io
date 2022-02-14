@@ -3,10 +3,7 @@
   color: $black-light;
   font-size: 26px;
 
-  .lowast {
-    font-size: 30px;
-    line-height: 30px;
-  }
+  .lowast { font-size: 30px; }
 
   &::before {
     content: "";
@@ -37,9 +34,9 @@
       .lowast {
         @include the-transition();
         transition-duration: 0.6s;
-        transform-origin: 52% 55%;
+        transform-origin: 52% 67%
       }
-      &:hover .lowast { transform: rotate(350deg); }
+      &:hover .lowast { transform: rotate(345deg); }
 
       &::before {
         @include the-transition();
@@ -73,19 +70,18 @@
 
       .lowast {
         font-size: 30px;
-        line-height: 30px;
 
         @include the-transition();
         transition-duration: 0.6s;
-        transform-origin: 52% 55%;
+        transform-origin: 52% 67%
       }
       &:hover .lowast { transform: rotate(350deg); }
 
       &::before {
         content: "";
         position: absolute;
-        left: 4px;
-        bottom: 0.3px;
+        left: 3px;
+        bottom: 0;
         width: 17px;
         height: 9px;
         border: 1.5px solid $theme;
@@ -117,13 +113,4 @@
   }
 
   .category-list-child { padding-left: 10px; }
-}
-
-.post-category {
-  a {
-    border-bottom: none;
-    
-    @include the-transition();
-    &:hover { color: $theme; }
-  }
 }

@@ -130,6 +130,7 @@ ol, ul {
 .lowast {
   display: inline-block;
   font-size: 20px;
+  line-height: 10px;
   color: $lowast;
   text-shadow: .7px .6px $lowast-shadow;
   transform: rotate(-15deg);

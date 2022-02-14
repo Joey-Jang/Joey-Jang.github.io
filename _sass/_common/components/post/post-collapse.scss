@@ -36,10 +36,7 @@
   .category-title-wrapper {
     position: relative;
 
-    .lowast {
-      font-size: 30px;
-      line-height: 30px;
-    }
+    .lowast { font-size: 30px; }
 
     &::before {
       content: "";

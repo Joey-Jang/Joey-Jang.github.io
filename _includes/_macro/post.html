@@ -96,12 +96,12 @@
               </span> -->
               {% if site.post_meta.item_text %}
                 <!-- <span class="post-meta-item-text">{{ __.post.in }}</span> -->
-                <span class="lowast">&lowast;</span>
-              {% endif %}
-              {% for cat in post.categories %}
+                {% endif %}
+                {% for cat in post.categories %}
                 {% assign cat_url_encode = cat | url_encode | replace: '+', '%20' %}
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="{{ '/category/#/' | relative_url | append: cat_url_encode }}" itemprop="url" rel="index">
+                    <span class="lowast">&lowast;</span>
                     <span itemprop="name">{{ cat }}</span>
                   </a>
                 </span>
