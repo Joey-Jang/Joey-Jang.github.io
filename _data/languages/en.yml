@@ -54,7 +54,7 @@ page:
 
 footer:
   powered: "Powered by %s"
-  theme: Theme
+  theme: Origin theme
 
 counter:
   tag_cloud:
