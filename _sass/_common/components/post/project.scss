@@ -1,8 +1,11 @@
 .project {
 
-  .project-thumbnail {
-    height: 180px;
+  .project-thumbnail-wrapper {
     margin-bottom: $project-thumbnail-margin-bottom;
+
+    .project-thumbnail {
+      width: 100%;
+    }
   }
 
 }

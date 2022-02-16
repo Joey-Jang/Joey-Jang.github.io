@@ -28,9 +28,11 @@
         {% comment %} % Not to show title for quote posts that do not have a title {% endcomment %}
         {% unless is_index and post.type == 'quote' and post.title == nil %}
           {% if post.thumbnail %}
-            <a href="{{ post.url }}">
-              <div class="project-thumbnail" style="background:center / cover no-repeat url('{{ site.thumbnailurl | append: post.thumbnail }}');"></div>
-            </a>
+            <div class="project-thumbnail-wrapper">
+              <a href="{{ post.url }}">
+                <img class="project-thumbnail" src="{{ site.thumbnailurl | append: post.thumbnail }}" alt="" />
+              </a>
+            </div>
           {% endif %}
           <{% if site.seo %}h2{% else %}h1{% endif %} class="post-title" itemprop="name headline">
           {% comment %} Link posts {% endcomment %}
