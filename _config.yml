@@ -67,6 +67,13 @@ defaults:
     values:
       layout: "post"
       comments: true
+  -
+    scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+      comments: true
 
 # Atom feed
 feed:
