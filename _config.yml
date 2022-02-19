@@ -17,8 +17,8 @@ date_format: '%Y-%m-%d'
 url: 'https://joey-jang.github.io'
 baseurl:
 permalink: pretty
-thumbnailurl: /assets/images/projects/thumbnail/
-contenturl: /assets/images/projects/content/
+project_thumbnail_url: /assets/images/projects/thumbnail/
+project_img_url: /assets/images/projects/img/
 
 # Pagination
 # paginate: 10

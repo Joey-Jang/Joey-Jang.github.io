@@ -1,8 +1,6 @@
-_includes projects
-
-<section id="posts" class="posts-expand">
-  {% assign paginate = site.project.paginate | default: site.paginate  %}
-  {% assign paginate_path = site.project.paginate_path | default: site.paginate_path  %}
+<section id="projects" class="posts-expand">
+  {% assign paginate = site.projects.paginate | default: site.paginate  %}
+  {% assign paginate_path = site.projects.paginate_path | default: site.paginate_path  %}
 
   {% for post in site.projects %}
     {% if paginate > 0 %}
