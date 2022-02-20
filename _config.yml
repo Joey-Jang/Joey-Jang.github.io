@@ -152,7 +152,7 @@ menu:
   # commonweal: /404.html
 
 collections:
-  projects:
+  project-posts:
     output: true
     permalink: /projects/:path/
   posts:

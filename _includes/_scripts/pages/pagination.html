@@ -62,7 +62,12 @@
         var base = "#" + "/" + collection;
       {% else %}
         console.log("else");
-        var sizes = {{ site.posts.size }}
+        {% if page.layout == 'blog' %}
+          var sizes = {{ site.posts.size }}
+        {% elsif page.layout == 'projects' %}
+          var sizes = {{ site.project-posts.size }}
+        {% endif %}
+
         var base = "#";
       {% endif %}
 

@@ -12,8 +12,8 @@
 </section>
 
 <section id="posts" class="posts-expand">
-  {% assign paginate = site.category.paginate | default: site.paginate  %}
-  {% assign paginate_path = site.category.paginate_path | default: site.paginate_path  %}
+  {% assign paginate = site.category.paginate | default: site.paginate %}
+  {% assign paginate_path = site.category.paginate_path | default: site.paginate_path %}
   
   {% for cat_posts in site.categories %}
     {% assign cat = cat_posts[0] | url_encode | replace: '+', '%20' %}

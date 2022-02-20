@@ -1,8 +1,8 @@
-<section id="projects" class="posts-expand">
+<section id="posts" class="posts-expand">
   {% assign paginate = site.projects.paginate | default: site.paginate  %}
   {% assign paginate_path = site.projects.paginate_path | default: site.paginate_path  %}
 
-  {% for post in site.projects %}
+  {% for post in site.project-posts %}
     {% if paginate > 0 %}
       {% assign page_num = forloop.index0 | divided_by: paginate | plus: 1 %}
       {% if page_num == 1 %}

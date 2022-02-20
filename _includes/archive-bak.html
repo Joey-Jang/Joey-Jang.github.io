@@ -22,8 +22,8 @@
     {{ __.keep_on }}
   </span>
 
-  {% assign paginate = site.archive.paginate | default: site.paginate  %}
-  {% assign paginate_path = site.archive.paginate_path | default: site.paginate_path  %}
+  {% assign paginate = site.archive.paginate | default: site.paginate %}
+  {% assign paginate_path = site.archive.paginate_path | default: site.paginate_path %}
 
   {% for post in site.posts %}
     {% if paginate > 0 %}

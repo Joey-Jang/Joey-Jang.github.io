@@ -103,7 +103,7 @@
       {% if is_index %}
         {% if post.description and site.excerpt_description %}
           {{ post.description }}
-        {% elsif post.excerpt  %}
+        {% elsif post.excerpt %}
           {% include _macro/post-excerpt.html %}
         {% elsif site.auto_excerpt.enable %}
           {% assign content = post.content | strip_html %}
@@ -118,7 +118,7 @@
         {% endif %}
       {% else %}
         {% include _macro/project-content.html %}
-      {% endif  %}
+      {% endif %}
     </div>
 
     <div>
@@ -164,7 +164,7 @@
       {% endunless %}
 
       {% if is_index %}
-        {% assign per_page = paginator.per_page | default: site.projects.size %}
+        {% assign per_page = paginator.per_page | default: site.project-posts.size %}
         {% assign index_modulo_per_page = forloop.index | modulo: per_page %}
         {% if index_modulo_per_page == 0 %}
           {% assign isLast = true %}

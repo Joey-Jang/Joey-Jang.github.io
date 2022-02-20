@@ -7,7 +7,7 @@
         {% assign key = key_value[0] %}
         {% assign value = key_value[1] %}
         {% assign deep = include.deep | plus: 1 %}
-        {% capture key_prefix  %}{{ include.key_prefix }}{{ include.key }}.{% endcapture %}
+        {% capture key_prefix %}{{ include.key_prefix }}{{ include.key }}.{% endcapture %}
         {% include _helper/_config_map.html key=key value=value deep=deep key_prefix=key_prefix %}
         {{ _config_map }}
       {% endfor %}

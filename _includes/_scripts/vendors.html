@@ -43,8 +43,8 @@
 {% for js_vendor in js_vendors %}
   {% assign name_internal = js_vendor | strip | split: ": " %}
   {% if name_internal.size != 2 %} {% continue %} {% endif %}
-  {% assign name = name_internal[0] | strip  %}
-  {% assign internal = name_internal[1] | strip  %}
+  {% assign name = name_internal[0] | strip %}
+  {% assign internal = name_internal[1] | strip %}
   {% assign internal_script = site.vendors._internal | append: '/' | append: internal | relative_url %}
   <script type="text/javascript" src="{{ site.vendors[name] | default: internal_script }}"></script>
 {% endfor %}

@@ -22,7 +22,7 @@ sitemap: true
       <!-- <tags></tags> -->
     </entry>
   {% endfor %}
-  {% for post in site.projects %}
+  {% for post in site.project-posts %}
     <entry>
       <title><![CDATA[{{ post.title | strip_html }}]]></title>
       <url>{{ post.url | relative_url }}</url>

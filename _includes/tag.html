@@ -9,8 +9,8 @@
 </section>
 
 <section id="posts" class="posts-expand">
-  {% assign paginate = site.tag.paginate | default: site.paginate  %}
-  {% assign paginate_path = site.tag.paginate_path | default: site.paginate_path  %}
+  {% assign paginate = site.tag.paginate | default: site.paginate %}
+  {% assign paginate_path = site.tag.paginate_path | default: site.paginate_path %}
 
   {% for tag_posts in site.tags %}
     {% assign tag = tag_posts[0] | url_encode | replace: '+', '%20' %}
