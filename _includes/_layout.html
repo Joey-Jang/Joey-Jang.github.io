@@ -29,7 +29,11 @@
     </header>
 
     <main id="main" class="main">
-      <div class="main-inner">
+      {% if page.layout == 'project' %}
+        <div class="project-main-inner">
+      {% else %}
+        <div class="main-inner">
+      {% endif %}
         <div class="content-wrap">
           <div id="content" class="content">
             {{ content }}

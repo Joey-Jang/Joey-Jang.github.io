@@ -28,13 +28,19 @@ html, body { height: 100%; }
   width: $content-desktop;
   min-width: $content-desktop-min;
   max-width: $content-desktop-max;
-
+  
   // @include desktop-large() {
-  //   .container & { width: $content-desktop-large; }
-  // }
-}
-
-
+    //   .container & { width: $content-desktop-large; }
+    // }
+  }
+  .project-main-inner {
+    margin: 0 auto;
+    padding-top: 80px;
+    min-width: $content-desktop-min;
+    max-width: $content-desktop-max;
+  }
+  
+  
 // Footer Section
 // --------------------------------------------------
 .footer {

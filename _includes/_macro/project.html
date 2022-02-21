@@ -27,12 +27,20 @@
       <header class="post-header">
         {% comment %} % Not to show title for quote posts that do not have a title {% endcomment %}
         {% unless is_index and post.type == 'quote' and post.title == nil %}
-          {% if post.thumbnail %}
-            <div class="project-thumbnail-wrapper">
-              <a href="{{ post.url }}">
-                <img class="project-thumbnail" src="{{ site.project_thumbnail_url | append: post.thumbnail }}" alt="" />
-              </a>
-            </div>
+          {% if is_index%}
+            {% if post.thumbnail %}
+              <div class="project-thumbnail-wrapper">
+                <a href="{{ post.url }}">
+                  <img class="project-thumbnail" src="{{ site.project_thumbnail_url | append: post.thumbnail }}" alt="" />
+                </a>
+              </div>
+            {% endif %}
+          {% else %}
+            {% if post.header-img %}
+              <div class="project-header-img-wrapper">
+                <img class="project-header-img" src="{{ site.project_img_url | append: post.header-img }}" alt="" />
+              </div>
+            {% endif %}
           {% endif %}
           <{% if site.seo %}h2{% else %}h1{% endif %} class="post-title" itemprop="name headline">
           {% comment %} Link posts {% endcomment %}

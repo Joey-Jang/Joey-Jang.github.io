@@ -70,10 +70,10 @@ defaults:
   -
     scope:
       path: ""
-      type: "projects"
+      type: "project-posts"
     values:
       layout: "project"
-      comments: true
+      comments: false
 
 # Atom feed
 feed:
