@@ -35,6 +35,13 @@
   text-overflow: ellipsis;
   white-space: if(not jekyll-config('toc.wrap'), nowrap, null);
   line-height: 1.8;
+  @include the-transition();
+  color: $toc-link-color;
+
+  &.active-current {
+    @include the-transition();
+    color: $toc-link-active-color;
+  }
 }
 
 .post-toc .nav .nav-child { display: none; }
