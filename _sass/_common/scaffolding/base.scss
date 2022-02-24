@@ -110,7 +110,7 @@ dd {
   padding: 0;
 }
 
-.header-inner, .main-inner, .project-main-inner, .footer-inner {
+.header-inner, .main-inner, .footer-inner {
   @include mobile() {
     width: $content-mobile !important;
     min-width: $content-mobile-min !important;
