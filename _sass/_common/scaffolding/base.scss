@@ -84,7 +84,7 @@ hr {
   border: none;
   background-color: $gray-lighter;
   background-image: repeating-linear-gradient(
-    90deg,
+    90deg, // -45deg
     white,
     white 4px,
     transparent 4px,

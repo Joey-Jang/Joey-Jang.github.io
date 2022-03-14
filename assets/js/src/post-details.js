@@ -20,9 +20,9 @@ $(document).ready(function () {
       })
       .on('clear.bs.scrollspy', removeCurrentActiveClass);
 
-    var offset = 10;
+    var offset = 10; // ScrollSpy.DEFAULTS.offset = 10;
 
-    if ($('header').css("position") === "fixed") {
+    if ($('header').css("position") === "fixed") { // if header display is fixed, offset toc scroll
       offset = offset + $('.header-inner').height();
     }
     $('body').scrollspy({ target: tocSelector, offset: offset });
