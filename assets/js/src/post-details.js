@@ -20,7 +20,12 @@ $(document).ready(function () {
       })
       .on('clear.bs.scrollspy', removeCurrentActiveClass);
 
-    $('body').scrollspy({ target: tocSelector });
+    var offset = 10;
+
+    if ($('header').css("position") === "fixed") {
+      offset = offset + $('.header-inner').height();
+    }
+    $('body').scrollspy({ target: tocSelector, offset: offset });
 
     function removeCurrentActiveClass () {
       $(tocSelector + ' ' + activeCurrentSelector)
@@ -121,7 +126,10 @@ $(document).ready(function () {
   $('.post-toc a').on('click', function (e) {
     e.preventDefault();
     var targetSelector = NexT.utils.escapeSelector(decodeURIComponent(this.getAttribute('href')));
-    var offset = $(targetSelector).offset().top - $('.header-inner').height(); // if header display is fixed, offset toc scroll
+    var offset = $(targetSelector).offset().top;
+    if ($('header').css("position") === "fixed") { // if header display is fixed, offset toc scroll
+      offset = offset - $('.header-inner').height();
+    }
 
     hasVelocity ?
       html.velocity('stop').velocity('scroll', {
