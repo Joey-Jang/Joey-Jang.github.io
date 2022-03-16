@@ -7,6 +7,8 @@
           <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
+    {% elsif site.utterances.enable %}
+      {% include _third-party/comments/utterances.html %}
     {% endif %}
   </div>
 {% endif %}

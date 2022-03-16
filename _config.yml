@@ -403,12 +403,16 @@ mathjax:
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname: joey-jang
-  count: true
+  count: false
   # hide comments (visitors need to click to load the comments)
   # count need to be false when hide is true
   hide: false
+
+# utterances
+utterances:
+  enable: true
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/

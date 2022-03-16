@@ -1,7 +1,7 @@
 ---
 title: 스프링부트(Gradle) + 리액트 앱(TypeScript) 연동하기
 categories:
-- IDE
+- Web
 tags:
 - SpringBoot
 - Gradle
