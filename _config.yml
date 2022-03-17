@@ -416,10 +416,10 @@ utterances:
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
-#google_site_verification:
+google_site_verification: C7gsrPXOycHQEFBKlD2hCMZIveX89c9p8oUXJk9uP6s
 
 # Google Analytics
-google_analytics: 305658242
+google_analytics: G-3K7V86YWM8
 
 # Application Insights
 # See https://azure.microsoft.com/en-us/services/application-insights/

@@ -95,7 +95,7 @@ hr {
 blockquote {
   padding: 0 15px;
   color: $gray-dim;
-  border-left: 4px solid $gray-lighter;
+  border-left: 4px solid $theme-cc;
 
   cite::before {
     content: "-";
