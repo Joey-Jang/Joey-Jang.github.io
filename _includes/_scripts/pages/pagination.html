@@ -19,19 +19,16 @@
 
       // Pagination
       {% if page.layout == 'category' %}
-        console.log("category");
         {% assign collections = site.categories %}
         {% assign redirect = '/categories/' | relative_url %}
       {% endif %}
 
       {% if page.layout == 'tag' %}
-        console.log("tag");
         {% assign collections = site.tags %}
         {% assign redirect = '/tags/' | relative_url %}
       {% endif %}
 
       {% if collections %}
-        console.log("collecions");
         if (hash == "/")  {
           window.location = "{{ redirect }}";
           return;
@@ -61,7 +58,6 @@
         var sizes = maps[encodeURIComponent(collection)];
         var base = "#" + "/" + collection;
       {% else %}
-        console.log("else");
         {% if page.layout == 'blog' %}
           var sizes = {{ site.posts.size }}
         {% elsif page.layout == 'projects' %}
